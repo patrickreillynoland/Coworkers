@@ -1,4 +1,4 @@
-angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories'])
+angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'Coworkers.services'])
 .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
     UserService.me().then(function() {
         redirect();

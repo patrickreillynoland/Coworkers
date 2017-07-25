@@ -7,7 +7,7 @@ var router = express.Router();
 
 
 router.use('/users', users);
-router.use('locations', locations);
+router.use('/locations', locations);
 
 
 
