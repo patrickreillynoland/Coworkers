@@ -74,5 +74,49 @@ router.route('/:id')
         });
     });
 
+router.route('/:id')
+    .delete(auth.isAdmin, function(req, res) {
+        procedures.read(req.params.id)
+        .then(function(user) {
+            res.send(user);
+        }, function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
+
+    router.route('/:id')
+    .post(auth.isAdmin, function(req, res) {
+        procedures.read(req.params.id)
+        .then(function(user) {
+            res.send(user);
+        }, function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
+
+    router.route('/:id')
+    .post(auth.isAdmin, function(req, res) {
+        procedures.UpdateInterest(req.params.id)
+        .then(function(user) {
+            res.send(user);
+        }, function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
+    router.route('/:id')
+    .get(auth.isAdmin, function(req, res) {
+        procedures.readByEmail(req.params.id)
+        .then(function(user) {
+            res.send(user);
+        }, function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    });
+
+
 
 module.exports = router;
