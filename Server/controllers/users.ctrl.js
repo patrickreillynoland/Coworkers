@@ -7,8 +7,8 @@ var router = express.Router();
 router.route('/')
     .get(function(req, res) {
         procedures.all()
-        .then(function(products) {
-            res.send(products);
+        .then(function(users) {
+            res.send(users);
         }, function(err) {
             console.log(err);
             res.sendStatus(500);
@@ -19,8 +19,8 @@ router.route('/')
 router.route('/:id')
 .get(function(req,res){
     procedures.read(req.params.id)
-    .then(function(product){
-        res.send(product);
+    .then(function(user){
+        res.send(user);
     }, function(err){
         console.log(err);
         res.sendStatus(500);
