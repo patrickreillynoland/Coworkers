@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var prerender = require('prerender-node');
 var api = require('./api');
-//var configurePassport = require('./config/passport');
+var configurePassport = require('./config/passport');
 var routing = require('./middleware/routing.mw');
 
 var clientPath = path.join(__dirname, '../client');
@@ -19,7 +19,7 @@ app.use(prerender);
 app.use(express.static(clientPath));
 app.use(cookieParser());
 app.use(bodyParser.json());
-//configurePassport(app);
+configurePassport(app);
 
 app.use('/api', api);
 
