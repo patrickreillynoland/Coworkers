@@ -1,4 +1,4 @@
-angular.module('Coworkers'['ngRoute', 'ngResource', 'Coworkers.controllers', 'Coworkers.factories'])
+angular.module('Coworkers', ['ngRoute', 'ngResource', 'Coworkers.controllers', 'Coworkers.factories'])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
@@ -6,8 +6,8 @@ angular.module('Coworkers'['ngRoute', 'ngResource', 'Coworkers.controllers', 'Co
         templateUrl: 'views/welcome.html'
     })
     .when('/login', {
-        templateUrl: 'views/category.html',
-        controller: 'CategoryController'
+        templateUrl: 'views/login.html',
+        controller: 'LoginController'
     })
     .when('/users', {
         templateUrl: 'views/users.html',
