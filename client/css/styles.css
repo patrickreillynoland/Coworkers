@@ -1,11 +1,96 @@
 /* COWORKERS
 /*
 /* 1) Elements and General Classes
+/*    - Elements
+/*    - Colors
+/*    - Fonts
+/*    -
 /* 2) Index Styling
 /* 3)
 */
 
+
+/* 1) Elements and General Classes */
+/* Elements */
 body {
     height: 100%
+}
+
+/* Colors */
+.rich-red {
+    background-color: #703030;
+}
+
+.obsidian {
+    background-color: #2F343B;
+}
+
+.granite {
+    background-color: #7E827A;
+}
+
+.sandstone {
+    background-color: #E3CDA4;
+}
+
+.auburn {
+    background-color: #C77966;
+}
+
+.offwhite {
+    background-color: #f1f1f1;
+}
+
+/* Fonts */
+.graduate {
+    font-family: 'Graduate', cursive;
+}
+
+.open-sans {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.arvo {
+    font-family: 'Arvo', serif;
+}
+
+/* 2) Index Styling */
+.topnav {
+    overflow: hidden;
+    height: 5.7em;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  color: #44b6c8;
+  text-decoration: underline;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+
+#nav-link-wrap {
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+}
+
+#nav-links {
+    margin-top:20px;
+}
+
+#header-logo {
+    max-width: 300px;
 }
 
