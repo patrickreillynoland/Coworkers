@@ -1,4 +1,4 @@
-angular.module('AuthExample.services', [])
+angular.module('Coworkers.services', [])
     .service('UserService', ['$http', '$location', function ($http, $location) {
         var currentUser;
         this.isLoggedIn = function() {

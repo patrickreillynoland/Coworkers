@@ -1,4 +1,4 @@
-angular.module('AuthExample.directives', [])
+angular.module('Coworkers.directives', [])
 .directive('systemUser', [function() {
     return {
         templateUrl: 'directives/user.html',
