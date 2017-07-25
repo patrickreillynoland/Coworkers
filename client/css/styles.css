@@ -6,7 +6,7 @@
 /*    - Fonts
 /*    -
 /* 2) Index Styling
-/* 3)
+/* 3) Welcome View
 */
 
 
@@ -94,3 +94,8 @@ body {
     max-width: 300px;
 }
 
+/* Welcome View */
+
+#welcome {
+    background-image: url("../images/welcome_1920x1280.jpg");
+}
