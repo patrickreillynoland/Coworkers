@@ -1,15 +1,25 @@
 angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'Coworkers.services'])
 .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-    UserService.me().then(function() {
-        redirect();
-    });
+
     
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
         .then(function() {
+            console.log('Good match')
             redirect();
         }, function(err) {
-            console.log(err)
+            console.log(err);
+        })
+    }
+
+    $scope.logout = function() {
+        UserService.logout();
+        redirect();
+    }
+
+    $scope.go = function() {
+        UserService.me().then(function() {
+        redirect();
         })
     }
 

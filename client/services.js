@@ -33,6 +33,7 @@ angular.module('Coworkers.services', [])
                 url: '/api/users/logout'
             }).then(function() {
                 currentUser = undefined;
+                alert('Logged out');
             });
         }
 
