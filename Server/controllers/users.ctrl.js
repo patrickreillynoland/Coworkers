@@ -42,7 +42,7 @@ router.get('/me', function(req, res) {
 
 // actually /api/users/
 router.route('/')
-    .get(auth.isAdmin, function(req, res) {
+    .get(function(req, res) {
         procedures.all()
         .then(function(users) {
             res.send(users);

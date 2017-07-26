@@ -20,5 +20,5 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
     }
 }])
 .controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
-    $scope.users=Users.query({ id : $routeParams.id });
+    $scope.users=Users.query({ id : $routeParams.userid });
 }])
