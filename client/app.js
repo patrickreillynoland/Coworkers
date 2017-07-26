@@ -9,6 +9,14 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'Coworkers.controllers', '
         templateUrl: 'views/login.html',
         controller: 'LoginController'
     })
+    .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignupController'
+    })
+    .when('/profileview', {
+        templateUrl: 'views/profileview.html',
+        controller: 'ProfileViewController'
+    })
     .when('/users', {
         templateUrl: 'views/users.html',
         controller: 'UsersController'

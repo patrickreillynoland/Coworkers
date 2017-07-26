@@ -1,25 +1,15 @@
 angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'Coworkers.services'])
 .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
-
+    UserService.me().then(function() {
+        redirect();
+    });
     
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
         .then(function() {
-            console.log('Good match')
             redirect();
         }, function(err) {
-            console.log(err);
-        })
-    }
-
-    $scope.logout = function() {
-        UserService.logout();
-        redirect();
-    }
-
-    $scope.go = function() {
-        UserService.me().then(function() {
-        redirect();
+            console.log(err)
         })
     }
 
@@ -31,4 +21,8 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 }])
 .controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
     $scope.users=UserFactory.query({ id : $routeParams.userid });
+}])
+
+.controller('SignupController', ['$scope', 'UserService', function($scope, UserService){
+
 }])
