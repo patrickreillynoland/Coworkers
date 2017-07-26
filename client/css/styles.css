@@ -21,24 +21,47 @@ body {
     background-color: #703030;
 }
 
+.rich-red-text {
+    color: #703030;
+}
+
 .obsidian {
     background-color: #2F343B;
+}
+
+.obsidian-text {
+    color: #2F343B;
 }
 
 .granite {
     background-color: #7E827A;
 }
 
+.granite-text {
+    color: #7E827A;
+}
+
 .sandstone {
     background-color: #E3CDA4;
 }
 
+.sandstone-text {
+    color: #E3CDA4;
+}
 .auburn {
     background-color: #C77966;
 }
 
+.auburn-text {
+    color: #C77966;
+}
+
 .offwhite {
     background-color: #f1f1f1;
+}
+
+.offwhite-text {
+    color: #f1f1f1;
 }
 
 /* Fonts */
@@ -98,4 +121,33 @@ body {
 
 #welcome {
     background-image: url("../images/welcome_1920x1280.jpg");
+    background-size: 100%;
+    height: 500px;
+    padding: 0;
+}
+
+#jumbotron-layer {
+    background-color: rgba(227, 205, 164, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#signup-btn {
+    width: 50%;
+    margin: 10px;
+    margin-left: 25%;
+}
+
+#seeusers-btn {
+    width: 50%;
+    margin: 10px;
+    margin-left: 25%;
 }
