@@ -1,4 +1,4 @@
-angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'Coworkers.services'])
+angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworkers.factories', 'Coworkers.services'])
 .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
@@ -64,3 +64,8 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 .controller('UserSearchController', ['$scope', function($scope){
 
 }])
+.controller("NavController", ["$scope", "MenuService", function($scope, MenuService){
+    MenuService.setMenu([{href:"#", label:"My Profile",
+                dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}, {href:"/logout", label:"Logout"}],
+    }]);
+}]);

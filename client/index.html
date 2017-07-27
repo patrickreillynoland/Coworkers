@@ -24,7 +24,7 @@
     </head>
     <body>
         <nav class="navbar navbar-default rich-red">
-            <div class="topnav" id="myTopnav">
+            <div class="topnav" id="myTopnav" ng-controller="NavController">
                 <div id="nav-header-box" class="navbar-header">
                     <a class="navbar-logo" href="/">
                         <img id="header-logo" src="images/Coworkers_RedandGold_1200x206.png"/>
@@ -32,8 +32,24 @@
                 </div>
                 <div id="main-nav">
                     <div id="nav-link-wrap">
-                        <a class="arvo" href="/profile">My Profile</a>
-                        <a class="arvo" href="/login">Login</a>
+                        <span ng-repeat-start="menu_element in globalMenu"></span>
+                        <li ng-if="menu_element.dropdown !== undefined">
+                            <a ng-href="{{menu_element.href}}" class="dropdown-toggle graduate">
+                                {{menu_element.label}}
+                                <b class="caret" ></b>
+                            </a>
+                            <ul id="nav-dropdown" class="dropdown-menu graduate">
+                                <li ng-repeat="sub_element in $parent.menu_element.dropdown">
+                                    <a ng-href="{{sub_element.href}}">{{sub_element.label}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li ng-if="menu_element.dropdown === undefined">
+                            <a ng-href="{{menu_element.href}}">
+                                {{menu_element.label}}
+                            </a>
+                        </li>
+                        <span ng-repeat-end></span>
                     </div>
                 </div>
             </div>
@@ -41,7 +57,8 @@
         <div ng-view></div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
+        <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
         <script src="app.js"></script>
         <script src="controllers.js"></script>
         <script src="factories.js"></script>
