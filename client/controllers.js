@@ -4,7 +4,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
         UserService.login($scope.email, $scope.password)
         .then(function() {
             console.log('Good match')
-            redirect();
+            userLink();
         }, function(err) {
             console.log(err);
         })
@@ -26,11 +26,37 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
         if (!dest) { dest = '/'; }
         $location.replace().path(dest).search('dest', null);
     }
-}])
-.controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
-    $scope.users=UserFactory.query({ id : $routeParams.userid });
+    function userLink() {
+        window.location.assign('/users');
+    }
 }])
 
-.controller('SignupController', ['$scope', 'UserService', function($scope, UserService){
+.controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
+    $scope.users=UserFactory.query();
+}])
+
+.controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
+    $scope.newUser = function(){
+        var u = new UserFactory($scope.user);
+        u.$save(function(){
+            $location.path('signup/additionalinfo');
+        }, function(err){
+            console.log(err);
+        })
+    }
+}])
+.controller('AdditionalInfoController'['$scope', function($scope){
+
+}])
+
+.controller('ProfileViewController', ['$scope', function($scope){
+
+}])
+
+.controller('UserProfileController', ['$scope', 'UserFactory', '$routeParams', '$location', function($scope, UserFactory, $routeParams, $location){
+    $scope.user = UserFactory.get({ id: $routeParams.id });
+    console.log($routeParams.id)
+}])
+.controller('UserSearchController', ['$scope', function($scope){
 
 }])

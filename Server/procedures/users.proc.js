@@ -5,8 +5,8 @@ exports.readByEmail=function(email) {
 
 }
 
-exports.create = function(email, password, firstName, lastName, interests) {
-    return db.row('NewUser', [email, password, firstName, lastName, interests]);
+exports.create = function(email, password) {
+    return db.row('NewUser', [email, password]);
 }
 
 exports.all = function() {
@@ -18,8 +18,8 @@ exports.update = function(userid, interests, displayemail) {
 
 }   
 
-exports.UpdateInterest = function(userid, Interests) {
-    return db.row('AddInterests', [userid, Interests]);
+exports.UpdateInterest = function(userid, firstname, lastname, interests) {
+    return db.row('AdditionalInfo', [userid, firstname, lastname, interests]);
 }
 
 exports.read = function(userid) {
