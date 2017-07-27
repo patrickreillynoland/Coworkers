@@ -68,4 +68,4 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 
 
 
->>>>>>> f296b18fce90e4d794541271875a594ae4452933
+
