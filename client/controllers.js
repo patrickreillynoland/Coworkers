@@ -43,6 +43,6 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 }])
 
 .controller('UserProfileController', ['$scope', 'UserFactory', '$routeParams', '$location', function($scope, UserFactory, $routeParams, $location){
-    $scope.users = UserFactory.get({ id: $routeParams.userid });
-    console.log($routeParams.userid)
+    $scope.user = UserFactory.get({ id: $routeParams.id });
+    console.log($routeParams.id)
 }])
