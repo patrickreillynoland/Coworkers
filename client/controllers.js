@@ -37,15 +37,19 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 
 .controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
     $scope.newUser = function(){
-        var u = new UserFactory($scope.user);
+       if ($scope.user.password === $scope.user.password1) {
+     var u = new UserFactory($scope.user);
         u.$save(function(){
-            $location.path('signup/additionalinfo');
+            $location.path('/signup/additionalinfo');
         }, function(err){
             console.log(err);
         })
+} else { 
+   alert("passwords missmatch")
+}
     }
 }])
-.controller('AdditionalInfoController'['$scope', function($scope){
+.controller('AdditionalInfoController',['$scope', function($scope){
 
 }])
 
@@ -60,3 +64,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 .controller('UserSearchController', ['$scope', function($scope){
 
 }])
+
+
+
+
