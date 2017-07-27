@@ -39,7 +39,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
     $scope.newUser = function(){
         var u = new UserFactory($scope.user);
         u.$save(function(){
-            $location.path('/signup/additionalinfo');
+            $location.path('signup/additionalinfo');
         }, function(err){
             console.log(err);
         })
