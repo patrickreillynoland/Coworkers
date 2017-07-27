@@ -50,4 +50,14 @@ angular.module('Coworkers.services', [])
                 });
             }
         }
-}]);
+}])
+.service("MenuService", ["$rootScope", function($rootScope) {
+        return { 
+            menu: function() {
+                $rootScope.globalMenu;
+            },    
+            setMenu: function(menu) {
+                $rootScope.globalMenu = menu;
+            }
+        };
+}]);   

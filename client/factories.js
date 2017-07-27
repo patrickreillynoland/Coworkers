@@ -5,4 +5,4 @@ angular.module('Coworkers.factories', ['ngResource'])
             method: 'PUT'
         }
     });
-}])
+}]);

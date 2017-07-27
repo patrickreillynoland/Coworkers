@@ -109,15 +109,17 @@ body {
 #nav-link-wrap {
     margin-top: 10px;
     margin-left: 20px;
-    float: left;
-}
-
-#nav-links {
-    margin-top:20px;
+    float: right;
 }
 
 #header-logo {
     max-width: 300px;
+}
+
+#nav-dropdown {
+    right: 0;
+    left: auto;
+    float: right;
 }
 
 /* 3) Welcome View */
