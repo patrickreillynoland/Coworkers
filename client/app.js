@@ -25,6 +25,14 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'Coworkers.controllers', '
         templateUrl: 'views/users.html',
         controller: 'UsersController'
     })
+    .when('/users/search=', {
+        templateUrl: 'views/searchresults.html',
+        controller: 'UserSearchController'
+    })
+    .when('/additionalinfo', {
+        templateUrl: 'views/additionalinfo.html',
+        controller: 'AdditionalInfoController'
+    })
     .otherwise({
         redirectTo: '/'
     });

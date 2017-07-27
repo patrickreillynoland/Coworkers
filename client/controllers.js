@@ -30,11 +30,22 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
         window.location.assign('/users');
     }
 }])
+
 .controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
-    $scope.users=UserFactory.query({ id : $routeParams.userid });
+    $scope.users=UserFactory.query();
 }])
 
-.controller('SignupController', ['$scope', 'UserService', function($scope, UserService){
+.controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
+    $scope.newUser = function(){
+        var u = new UserFactory($scope.user);
+        u.$save(function(){
+            $location.path('/signup/additionalinfo');
+        }, function(err){
+            console.log(err);
+        })
+    }
+}])
+.controller('AdditionalInfoController'['$scope', function($scope){
 
 }])
 
@@ -45,4 +56,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 .controller('UserProfileController', ['$scope', 'UserFactory', '$routeParams', '$location', function($scope, UserFactory, $routeParams, $location){
     $scope.user = UserFactory.get({ id: $routeParams.id });
     console.log($routeParams.id)
+}])
+.controller('UserSearchController', ['$scope', function($scope){
+
 }])
