@@ -27,7 +27,7 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-router.all('*', auth.isLoggedIn);
+// router.all('*', auth.isLoggedIn);
 
 router.get('/logout', function(req, res) {
     req.session.destroy(function() {
