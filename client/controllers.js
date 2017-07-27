@@ -64,11 +64,3 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 .controller('UserSearchController', ['$scope', function($scope){
 
 }])
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> 2683e38547dff8cd2173574f7486efdb95fa9666
