@@ -37,7 +37,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 
 .controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
     $scope.newUser = function(){
-       if ($scope.user.password === $scope.user.password1) {
+       if ($scope.user.password === $scope.password1) {
      var u = new UserFactory($scope.user);
         u.$save(function(){
             $location.path('/users');
