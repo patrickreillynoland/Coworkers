@@ -18,8 +18,8 @@ exports.update = function(userid, interests, displayemail) {
 
 }   
 
-exports.UpdateInterest = function(userid, Interests) {
-    return db.row('AddInterests', [userid, Interests]);
+exports.UpdateInterest = function(userid, firstname, lastname, interests) {
+    return db.row('AdditionalInfo', [userid, firstname, lastname, interests]);
 }
 
 exports.read = function(userid) {
