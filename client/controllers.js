@@ -40,7 +40,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
        if ($scope.user.password === $scope.user.password1) {
      var u = new UserFactory($scope.user);
         u.$save(function(){
-            $location.path('/signup/additionalinfo');
+            $location.path('/users');
         }, function(err){
             console.log(err);
         })
@@ -64,8 +64,11 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 .controller('UserSearchController', ['$scope', function($scope){
 
 }])
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 2683e38547dff8cd2173574f7486efdb95fa9666
