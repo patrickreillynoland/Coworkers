@@ -4,7 +4,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
         UserService.login($scope.email, $scope.password)
         .then(function() {
             console.log('Good match')
-            redirect();
+            userLink();
         }, function(err) {
             console.log(err);
         })
@@ -26,6 +26,9 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
         if (!dest) { dest = '/'; }
         $location.replace().path(dest).search('dest', null);
     }
+    function userLink() {
+        window.location.assign('/users');
+    }
 }])
 .controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
     $scope.users=UserFactory.query({ id : $routeParams.userid });
@@ -33,4 +36,13 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 
 .controller('SignupController', ['$scope', 'UserService', function($scope, UserService){
 
+}])
+
+.controller('ProfileViewController', ['$scope', function($scope){
+
+}])
+
+.controller('UserProfileController', ['$scope', 'UserFactory', '$routeParams', '$location', function($scope, UserFactory, $routeParams, $location){
+    $scope.users = UserFactory.get({ id: $routeParams.userid });
+    console.log($routeParams.userid)
 }])
