@@ -27,7 +27,7 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-router.all('*', auth.isLoggedIn);
+// router.all('*', auth.isLoggedIn);
 
 router.get('/logout', function(req, res) {
     req.session.destroy(function() {
@@ -55,7 +55,7 @@ router.route('/')
         var u = req.body;
         utils.encryptPassword(u.password)
         .then(function(hash) {
-            return procedures.create(u.email, hash, u.firstname, u.lastname);
+            return procedures.create(u.firstname, u.lastname, u.email, hash, u.interests);
         }).then(function(id) {
             res.status(201).send(id);
         }).catch(function(err) {

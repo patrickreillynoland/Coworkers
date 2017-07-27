@@ -29,7 +29,7 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/searchresults.html',
         controller: 'UserSearchController'
     })
-    .when('/additionalinfo', {
+    .when('/signup/additionalinfo', {
         templateUrl: 'views/additionalinfo.html',
         controller: 'AdditionalInfoController'
     })

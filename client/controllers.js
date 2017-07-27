@@ -37,15 +37,19 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 
 .controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
     $scope.newUser = function(){
-        var u = new UserFactory($scope.user);
+       if ($scope.user.password === $scope.password1) {
+     var u = new UserFactory($scope.user);
         u.$save(function(){
-            $location.path('signup/additionalinfo');
+            $location.path('/users');
         }, function(err){
             console.log(err);
         })
+} else { 
+   alert("passwords missmatch")
+}
     }
 }])
-.controller('AdditionalInfoController'['$scope', function($scope){
+.controller('AdditionalInfoController',['$scope', function($scope){
 
 }])
 
