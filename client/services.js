@@ -20,7 +20,7 @@ angular.module('Coworkers.services', [])
 
     this.loginRedirect = function() {
         var current = $location.path();
-        $location.replace().path('/login').search('dest', current);
+        $location.path('/login').search('dest', current);
     }
 
     this.login = function(email, password) {

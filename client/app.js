@@ -16,7 +16,7 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
     .when('/:id/update',{
         templateUrl: 'views/editprofile.html',
         controller: 'EditProfileController',
-        requiresLogin: true,
+        requiresLogin: true
 
     })
     .when('/users/:id', {
@@ -31,8 +31,7 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
     })
     .when('/:userid', {
         templateUrl: 'views/profileview.html',
-        controller: 'ProfileViewController',
-        requiresLogin: true
+        controller: 'ProfileViewController'
     })
     .when('/search', {
         templateUrl: 'views/search.html',

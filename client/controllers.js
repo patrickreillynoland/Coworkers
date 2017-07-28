@@ -13,13 +13,10 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.logout = function() {
         UserService.logout();
         redirect();
-    }
-
-    $scope.go = function() {
+    }   
         UserService.me().then(function() {
         redirect();
         })
-    }
 
     function redirect() {
         var dest = $location.search().dest;

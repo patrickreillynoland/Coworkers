@@ -33,14 +33,14 @@ router.post('/', function(req, res) {
         .then(function(hash) {
             u.password = hash;
             return procedures.create(u.firstname, u.lastname, u.email, hash, u.interests);
-        }).then(function(id) {
-            u.userid = id;
+        }).then(function(result) {
+            u.userid = result.userid;
             req.logIn(u, function(err) {
                 if (err) {
                     console.log(err);
                     return res.sendStatus(500);
                 } else {
-                    return res.status(201).send(id);
+                    return res.status(201).send(result);
                 }
             });
         }).catch(function(err) {
@@ -49,7 +49,7 @@ router.post('/', function(req, res) {
         });
     })
 
-// router.all('*', auth.isLoggedIn);
+router.all('*', auth.isLoggedIn);
 
 router.get('/logout', function(req, res) {
     req.session.destroy(function() {
