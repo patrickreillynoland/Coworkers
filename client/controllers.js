@@ -49,12 +49,12 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 }
     }
 }])
-.controller('AdditionalInfoController',['$scope', function($scope){
+.controller('EditProfileController',['$scope','$routeParams', function($scope, $routeParams){
 
 }])
 
-.controller('ProfileViewController', ['$scope', function($scope){
-
+.controller('ProfileViewController', ['$scope','$routeParams', function($scope, $routeParams){
+    $scope.user = UserFactory.get({ id: $routeParams.id });
 }])
 
 .controller('UserProfileController', ['$scope', 'UserFactory', '$routeParams', '$location', function($scope, UserFactory, $routeParams, $location){
