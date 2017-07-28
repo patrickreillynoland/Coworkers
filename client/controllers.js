@@ -45,7 +45,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
             console.log(err);
         })
 } else { 
-   alert("passwords missmatch")
+   alert("passwords mismatch")
 }
     }
 }])
@@ -64,8 +64,22 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 .controller('UserSearchController', ['$scope', function($scope){
 
 }])
-.controller("NavController", ["$scope", "MenuService", function($scope, MenuService){
+.controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
     MenuService.setMenu([{href:"#", label:"My Profile",
-                dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}, {href:"/logout", label:"Logout"}],
+                dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}],
     }]);
+    
+    $scope.logout = function() {
+        function redirect() {
+            var dest = $location.search().dest;
+            if (!dest) { dest = '/'; }
+            $location.replace().path(dest).search('dest', null);
+        }
+        var c = confirm('Sure you want to log out?');
+        if (c) {
+            UserService.logout();
+        } else {
+            return;
+        }
+    }
 }]);
