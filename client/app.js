@@ -36,4 +36,16 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'Coworkers.controllers', '
     .otherwise({
         redirectTo: '/'
     });
+}])
+
+.run(['$rootScope', '$location', 'UserService', function($rootScope, $location, UserService) {
+    $rootScope.$on('$routeChangeStart', function(event, nextRoute, previousRoute) {
+        if (nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
+            event.preventDefault();
+            UserService.loginRedirect();
+        } else if (nextRoute.$$route.requiresAdmin && !UserService.isAdmin()) {
+            event.preventDefault();
+            $location.replace().path('/');
+        }
+    });
 }]);
