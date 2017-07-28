@@ -14,9 +14,9 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
         UserService.logout();
         redirect();
     }   
-        UserService.me().then(function() {
+    UserService.me().then(function() {
         redirect();
-        })
+    })
 
     function redirect() {
         var dest = $location.search().dest;
@@ -46,8 +46,8 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 }
     }
 }])
-.controller('EditProfileController',['$scope','$routeParams', function($scope, $routeParams){
-
+.controller('EditProfileController',['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
+    
 }])
 
 .controller('ProfileViewController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){

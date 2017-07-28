@@ -13,7 +13,7 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/signup.html',
         controller: 'SignupController'
     })
-    .when('/:id/update',{
+    .when('/user/:id/update',{
         templateUrl: 'views/editprofile.html',
         controller: 'EditProfileController',
         requiresLogin: true
@@ -28,10 +28,6 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/users.html',
         controller: 'UsersController',
         requiresLogin: true
-    })
-    .when('/:userid', {
-        templateUrl: 'views/profileview.html',
-        controller: 'ProfileViewController'
     })
     .when('/search', {
         templateUrl: 'views/search.html',
@@ -51,6 +47,9 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         } else if (nextRoute.$$route.requiresAdmin && !UserService.isAdmin()) {
             event.preventDefault();
             $location.replace().path('/');
+        } else if (nextRoute.$$route.originalPath === '/login' && UserService.isLoggedIn()) {
+            event.preventDefault();
+            $location.path('/');
         }
     });
 }]);
