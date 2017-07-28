@@ -1,13 +1,13 @@
 <div class="text-center">
     <div id="login-wrapper" class="col-md-8 sandstone">
-		<div class="logo graduate">Login</div>
+		<h4 class="logo graduate">Login</h4>
 		<div class="login-form-1">
 			<form id="login-form">
 				<div class="main-login-form">
 					<div class="login-group">
 						<div class="form-group text-centered">
 							<label for="lg_username" class="sr-only graduate">Username</label>
-							<input type="text" class="form-control" id="lg_username" name="lg_username" placeholder="username" ng-model="email">
+							<input type="text" class="form-control" id="lg_username" name="lg_username" placeholder="email" ng-model="email">
 						</div>
 						<div class="form-group">
 							<label for="lg_password" class="sr-only graduate">Password</label>
@@ -15,13 +15,12 @@
 						</div>
 						<div class="form-group login-group-checkbox">
 							<input type="checkbox" id="lg_remember" name="lg_remember">
-							<label for="lg_remember">Remember Me</label>
+							<label for="lg_remember" class="graduate">Remember Me</label>
 						</div>
 					</div>
 				</div>
 				<div class="etc-login-form">
-					<button type="submit" class="btn btn-default auburn rich-red-text" ng-click="login()">Login</button>
-					<button class="btn btn-default obsidian offwhite-text" ng-click="logout()">Logout</button>
+					<button type="submit" class="btn btn-default auburn rich-red-text graduate" ng-click="login()">Login</button>
 				</div>
 			</form>
         </div>

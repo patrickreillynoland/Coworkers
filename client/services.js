@@ -45,7 +45,7 @@ angular.module('Coworkers.services', [])
                 url: '/api/users/logout'
             }).then(function () {
                 currentUser = undefined;
-                alert('Logged out');
+                alert('You are now logged out');
             });
         }
 
@@ -62,4 +62,18 @@ angular.module('Coworkers.services', [])
                 });
             }
         }
+<<<<<<< HEAD
     }]);
+=======
+}])
+.service("MenuService", ["$rootScope", function($rootScope) {
+        return { 
+            menu: function() {
+                $rootScope.globalMenu;
+            },    
+            setMenu: function(menu) {
+                $rootScope.globalMenu = menu;
+            }
+        };
+}]);   
+>>>>>>> 73a7a77b38862d49727dfd4171805c90a6db0b97

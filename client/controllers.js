@@ -1,4 +1,4 @@
-angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'Coworkers.services'])
+angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworkers.factories', 'Coworkers.services'])
 .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
@@ -45,7 +45,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
             console.log(err);
         })
 } else { 
-   alert("passwords missmatch")
+   alert("passwords mismatch")
 }
     }
 }])
@@ -64,3 +64,22 @@ angular.module('Coworkers.controllers', ['ngResource', 'Coworkers.factories', 'C
 .controller('UserSearchController', ['$scope', function($scope){
 
 }])
+.controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
+    MenuService.setMenu([{href:"#", label:"My Profile",
+                dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}],
+    }]);
+    
+    $scope.logout = function() {
+        function redirect() {
+            var dest = $location.search().dest;
+            if (!dest) { dest = '/'; }
+            $location.replace().path(dest).search('dest', null);
+        }
+        var c = confirm('Sure you want to log out?');
+        if (c) {
+            UserService.logout();
+        } else {
+            return;
+        }
+    }
+}]);
