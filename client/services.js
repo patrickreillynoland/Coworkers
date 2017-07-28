@@ -62,9 +62,6 @@ angular.module('Coworkers.services', [])
                 });
             }
         }
-<<<<<<< HEAD
-    }]);
-=======
 }])
 .service("MenuService", ["$rootScope", function($rootScope) {
         return { 
@@ -76,4 +73,3 @@ angular.module('Coworkers.services', [])
             }
         };
 }]);   
->>>>>>> 73a7a77b38862d49727dfd4171805c90a6db0b97
