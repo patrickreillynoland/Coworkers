@@ -109,7 +109,9 @@ ul, li {
   display: none;
 }
 
-
+#navbar {
+    margin-bottom: 0;
+}
 #nav-link-wrap {
     margin-top: 10px;
     margin-left: 20px;
