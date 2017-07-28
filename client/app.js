@@ -13,9 +13,13 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/signup.html',
         controller: 'SignupController'
     })
-    .when('/profile', {
+    .when('/:userid', {
         templateUrl: 'views/profileview.html',
         controller: 'ProfileViewController'
+    })
+    .when('/:id/update',{
+        templateUrl: 'views/editprofile.html',
+        controller: 'EditProfileController'
     })
     .when('/users/:id', {
         templateUrl:'views/userprofile.html',
@@ -25,8 +29,8 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/users.html',
         controller: 'UsersController'
     })
-    .when('/users/search=', {
-        templateUrl: 'views/searchresults.html',
+    .when('/search', {
+        templateUrl: 'views/search.html',
         controller: 'UserSearchController'
     })
     .when('/signup/additionalinfo', {
