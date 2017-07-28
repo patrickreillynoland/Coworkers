@@ -13,7 +13,7 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/signup.html',
         controller: 'SignupController'
     })
-    .when('/:id/update',{
+    .when('/users/:id/update',{
         templateUrl: 'views/editprofile.html',
         controller: 'EditProfileController',
         requiresLogin: true
