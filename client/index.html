@@ -36,11 +36,14 @@
                         <li ng-if="menu_element.dropdown !== undefined">
                             <a ng-href="{{menu_element.href}}" class="dropdown-toggle graduate">
                                 {{menu_element.label}}
-                                <b class="caret" ></b>
+                                <b class="caret"></b>
                             </a>
                             <ul id="nav-dropdown" class="dropdown-menu graduate">
                                 <li ng-repeat="sub_element in $parent.menu_element.dropdown">
                                     <a ng-href="{{sub_element.href}}">{{sub_element.label}}</a>
+                                </li>
+                                <li>
+                                    <a ng-click="logout()">Logout</a>
                                 </li>
                             </ul>
                         </li>

@@ -19,6 +19,10 @@ body {
     background-color: #f1f1f1;
 }
 
+ul, li {
+    list-style: none;
+}
+
 /* Colors */
 .rich-red {
     background-color: #703030;
