@@ -27,18 +27,18 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-router.post( function(req, res) {
-        var u = req.body;
-        utils.encryptPassword(u.password)
-        .then(function(hash) {
-            return procedures.create(u.firstname, u.lastname, u.email, hash, u.interests);
-        }).then(function(id) {
-            res.status(201).send(id);
-        }).catch(function(err) {
-            console.log(err);
-            res.sendStatus(500);
-        });
-    })
+// router.post( function(req, res) {
+//         var u = req.body;
+//         utils.encryptPassword(u.password)
+//         .then(function(hash) {
+//             return procedures.create(u.firstname, u.lastname, u.email, hash, u.interests);
+//         }).then(function(id) {
+//             res.status(201).send(id);
+//         }).catch(function(err) {
+//             console.log(err);
+//             res.sendStatus(500);
+//         });
+//     })
 
 router.all('*', auth.isLoggedIn);
 
@@ -60,6 +60,18 @@ router.route('/')
         .then(function(users) {
             res.send(users);
         }, function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    })
+    .post( function(req, res) {
+        var u = req.body;
+        utils.encryptPassword(u.password)
+        .then(function(hash) {
+            return procedures.create(u.firstname, u.lastname, u.email, hash, u.interests);
+        }).then(function(id) {
+            res.status(201).send(id);
+        }).catch(function(err) {
             console.log(err);
             res.sendStatus(500);
         });

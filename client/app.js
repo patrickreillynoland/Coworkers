@@ -13,29 +13,31 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/signup.html',
         controller: 'SignupController'
     })
-    .when('/:userid', {
-        templateUrl: 'views/profileview.html',
-        controller: 'ProfileViewController'
-    })
     .when('/:id/update',{
         templateUrl: 'views/editprofile.html',
-        controller: 'EditProfileController'
+        controller: 'EditProfileController',
+        requiresLogin: true,
+
     })
     .when('/users/:id', {
-        templateUrl:'views/userprofile.html',
-        controller: 'UserProfileController'
+        templateUrl:'views/profileview.html',
+        controller: 'ProfileViewController',
+        requiresLogin: true
     })
     .when('/users', {
         templateUrl: 'views/users.html',
-        controller: 'UsersController'
+        controller: 'UsersController',
+        requiresLogin: true
+    })
+    .when('/:userid', {
+        templateUrl: 'views/profileview.html',
+        controller: 'ProfileViewController',
+        requiresLogin: true
     })
     .when('/search', {
         templateUrl: 'views/search.html',
-        controller: 'UserSearchController'
-    })
-    .when('/signup/additionalinfo', {
-        templateUrl: 'views/additionalinfo.html',
-        controller: 'AdditionalInfoController'
+        controller: 'UserSearchController',
+        requiresLogin: true
     })
     .otherwise({
         redirectTo: '/'
