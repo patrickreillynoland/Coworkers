@@ -110,7 +110,7 @@ router.route('/:id')
 
     router.route('/:id')
     .post(auth.isAdmin, function(req, res) {
-        procedures.UpdateInterest(req.params.id)
+        procedures.update(req.params.id)
         .then(function(user) {
             res.send(user);
         }, function(err) {

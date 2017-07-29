@@ -48,17 +48,13 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 }])
 .controller('EditProfileController',['$scope','UserFactory','$routeParams','$location', function($scope, UserFactory, $routeParams, $location){
     $scope.user = UserFactory.get({ id: $routeParams.id });
-
+    console.log($routeParams.id)
      $scope.save = function() {
         $scope.user.$update(function() {
             $location.replace().path('/' + $routeParams.id);
         });
     }
-
-.controller('EditProfileController',['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
-    
 }])
-
 .controller('ProfileViewController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
     $scope.user = UserFactory.get({ id: $routeParams.id });
 }])
