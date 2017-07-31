@@ -54,8 +54,6 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
             $location.replace().path('/' + $routeParams.id);
         });
     }
-
-.controller('EditProfileController',['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
     
 }])
 
