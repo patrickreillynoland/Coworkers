@@ -48,24 +48,26 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 }])
 .controller('EditProfileController',['$scope','UserFactory','$routeParams','$location', function($scope, UserFactory, $routeParams, $location){
     $scope.user = UserFactory.get({ id: $routeParams.id });
-
      $scope.save = function() {
         $scope.user.$update(function() {
             $location.replace().path('/' + $routeParams.id);
         });
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 5bbfb8f8ca2b6bd0af97beda1e8b5c715c71838a
 }])
-
 .controller('ProfileViewController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
     $scope.user = UserFactory.get({ id: $routeParams.id });
 }])
 
 .controller('UserProfileController', ['$scope', 'UserFactory', '$routeParams', '$location', function($scope, UserFactory, $routeParams, $location){
     $scope.user = UserFactory.get({ id: $routeParams.id });
-    console.log($routeParams.id)
+
 }])
-.controller('UserSearchController', ['$scope', function($scope){
+.controller('UserSearchController', ['$scope', 'UserFactory', function($scope, UserFactory){
+   $scope.users = UserFactory.query();
 
 }])
 .controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
