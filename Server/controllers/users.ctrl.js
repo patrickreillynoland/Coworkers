@@ -94,7 +94,7 @@ router.route('/:id')
             res.sendStatus(500);
         });
     })
-    .put(function(req, res) {
+    .put(auth.isUser, function(req, res) {
         procedures.update(req.params.id, req.body.interests, req.body.displayemail)
         .then(function(user) {
             res.send(user);
