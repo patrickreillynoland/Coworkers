@@ -14,7 +14,6 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         controller: 'SignupController'
     })
     .when('/users/:id/update',{
-    
         templateUrl: 'views/editprofile.html',
         controller: 'EditProfileController',
         requiresLogin: true

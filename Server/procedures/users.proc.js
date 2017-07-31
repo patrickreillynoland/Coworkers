@@ -25,6 +25,8 @@ exports.UpdateInterest = function(userid, firstname, lastname, interests) {
 exports.read = function(userid) {
  return db.row('GetUser', [userid]);
 }
+
+
 exports.destroy = function(id) {
  return db.empty('DeleteUser', [id]);
 }
