@@ -43,7 +43,7 @@
                                     <a ng-href="{{sub_element.href}}">{{sub_element.label}}</a>
                                 </li>
                                 <li>
-                                    <a ng-click="logout()">Logout</a>
+                                    <a ng-click="logout()" ng-show="loggedIn == true">Logout</a>
                                 </li>
                             </ul>
                         </li>

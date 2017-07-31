@@ -10,7 +10,7 @@
 /* 4) Login View
 /* 5) Signup View
 /* 6) Additional Info View
-/* 7) 
+/* 7) Users View
 
 /* 1) Elements and General Classes */
 /* Elements */
@@ -21,6 +21,15 @@ body {
 
 ul, li {
     list-style: none;
+}
+
+/* General Styling */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inherit;
 }
 
 /* Colors */
@@ -179,3 +188,49 @@ ul, li {
     padding: 15px;
 }
 
+/* 7) Users View */
+.user-card {
+    text-align: right;
+    border: 2px solid lightgrey;
+    background-color: #f1f1f1;
+    padding: 8px;
+    height: 150px;
+    margin: 10px;
+    width: 40em;
+}
+
+.profile-pic {
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 2em;
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    margin-top: 1em;
+}
+
+#users-container {
+    margin-top: 20px;
+}
+
+#users-wrapper {
+    margin-top: 20px;
+}
+
+#users-search {
+    float: left;
+    margin-top: 10px;
+}
+
+#users-search-label {
+    display: initial;
+}
+
+#users-search-field {
+    width: 40%;
+}
+
+#users-list {
+    float: right;
+}

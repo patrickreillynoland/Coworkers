@@ -3,9 +3,13 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
         .then(function() {
-            console.log('Good match')
-            redirect();
+            $scope.successAlert = true;
+            setTimeout(function() {
+                $scope.successAlert = false;
+                redirect();
+            }, 500);  
         }, function(err) {
+            $scope.failureAlert = true;
             console.log(err);
         })
     }
@@ -13,7 +17,8 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.logout = function() {
         UserService.logout();
         redirect();
-    }   
+    }
+
     UserService.me().then(function() {
         redirect();
     })
@@ -67,6 +72,8 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 
 }])
 .controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
+    $scope.loggedIn = false;
+    
     MenuService.setMenu([{href:"#", label:"My Profile",
                 dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}],
     }]);
