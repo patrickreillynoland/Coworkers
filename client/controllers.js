@@ -73,7 +73,9 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 
 }])
 .controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
-    $scope.loggedIn = false;
+    $scope.loggedIn = function() {
+        return UserService.currentUser;
+    }
     
     MenuService.setMenu([{href:"#", label:"My Profile",
                 dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}],

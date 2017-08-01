@@ -145,6 +145,11 @@ ul, li {
     padding: 0;
 }
 
+#welcome-2 {
+    background-image: url("../images/pexels-photo-164642.jpeg");
+    width: 100%;
+}
+
 #jumbotron-layer {
     background-color: rgba(227, 205, 164, 0.5);
     top: 0;
@@ -233,4 +238,8 @@ ul, li {
 
 #users-list {
     float: right;
+}
+
+#users-skills {
+    margin-left: 10%;
 }
