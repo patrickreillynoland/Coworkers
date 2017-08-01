@@ -16,8 +16,8 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
     .when('/users/:id/update', {
         templateUrl: 'views/editprofile.html',
         controller: 'EditProfileController',
-        requiresLogin: true
-
+        requiresLogin: true,
+        enforceId: true
     })
     .when('/users/:id', {
         templateUrl:'views/profileview.html',
@@ -44,6 +44,14 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         if (nextRoute.$$route.requiresLogin && !UserService.isLoggedIn()) {
             event.preventDefault();
             UserService.loginRedirect();
+        } else if(nextRoute.$$route.requiresLogin && nextRoute.$$route.enforceId && !UserService.isAdmin()) {
+            UserService.me()
+            .then(function(me) {
+                if (nextRoute.pathParams.id && nextRoute.pathParams.id != me.userid) {
+                    event.preventDefault();
+                    $location.path('/');
+                }
+            });
         } else if (nextRoute.$$route.requiresAdmin && !UserService.isAdmin()) {
             event.preventDefault();
             $location.replace().path('/');
