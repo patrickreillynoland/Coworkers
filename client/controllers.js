@@ -72,6 +72,10 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
    $scope.users = UserFactory.query();
 
 }])
+.controller('LocationsController', ['$scope', 'LocationFactory', function($scope, LocationFactory){
+   $scope.locations = LocationFactory.query();
+
+}])
 .controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
     $scope.loggedIn = function() {
         return UserService.currentUser;
