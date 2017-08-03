@@ -43,6 +43,18 @@ ul, li {
     text-align: center;
 }
 
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    align-items: center;
+}
+
 /* Colors */
 .rich-red {
     background-color: #703030;
@@ -268,4 +280,23 @@ ul, li {
 
 #users-skills {
     margin-left: 10%;
+}
+
+/* 8) Profile View */
+#profile-container {
+    margin-top: 6em;
+}
+
+#profile-pic {
+    display: absolute;
+    width: 6em;
+    height: 6em;
+    top: -10px;
+    left: -10px;
+}
+.profile-wrapper {
+    border: 2px solid grey;
+    width: 50em;
+    height: 30em;
+
 }
