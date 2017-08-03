@@ -34,6 +34,11 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         controller: 'UserSearchController',
         requiresLogin: true
     })
+    .when('/locations', {
+        templateUrl: 'views/locations.html',
+        controller: 'LocationsController',
+        requiresLogin: true
+    })
     .otherwise({
         redirectTo: '/'
     });
