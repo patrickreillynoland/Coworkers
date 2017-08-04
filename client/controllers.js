@@ -4,10 +4,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
         UserService.login($scope.email, $scope.password)
         .then(function() {
             $scope.successAlert = true;
-            setTimeout(function() {
-                $scope.successAlert = false;
-                redirect();
-            }, 500);  
+            $location.replace().path('/locations');
         }, function(err) {
             $scope.failureAlert = true;
             console.log(err);
@@ -83,6 +80,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 .controller ('SingleLocationController', ['$scope', 'LocationFactory', '$routeParams', 'UserFactory', function($scope, LocationFactory, $routeParams, UserFactory){
     $scope.location = LocationFactory.get ({ id: $routeParams.id });
     $scope.users = UserFactory.query();
+    $scope.toggle = true;
 }])
 
 .controller("NavController", ["$scope", "MenuService", "UserService", "UserFactory", function($scope, MenuService, UserService, UserFactory){
@@ -93,7 +91,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     }
     
     MenuService.setMenu([{href:"#", label:"My Profile",
-                dropdown:[{href:"/profile/" + 1, label:"View Profile"}, {href:"/login", label:"Login"}],
+                dropdown:[{href:"/users/me/update", label:"View Profile"}, {href:"/login", label:"Login"}],
     }]);
     
     $scope.logout = function() {

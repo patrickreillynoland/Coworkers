@@ -327,3 +327,11 @@ p {
    padding: 10px;
    float: left;
 } */
+
+/* 9) Locations View */
+
+/* 10) Single Location View */
+
+.location-user-hide:first-of-type {
+    display: none;
+}
