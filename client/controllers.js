@@ -77,8 +77,9 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 
 }])
 
-.controller ('SingleLocationController', ['$scope', 'LocationFactory', '$routeParams', function ($scope, LocationFactory, $routeParams){
-    $scope.location = LocationFactory.get ({ id: $routeParams.id })
+.controller ('SingleLocationController', ['$scope', 'LocationFactory', '$routeParams', 'UserFactory', function($scope, LocationFactory, $routeParams, UserFactory){
+    $scope.location = LocationFactory.get ({ id: $routeParams.id });
+    $scope.users = UserFactory.query();
 }])
 
 .controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
