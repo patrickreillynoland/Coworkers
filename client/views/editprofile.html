@@ -9,6 +9,7 @@
     <label for="interests">Interests</label>
     <div class="form-group">
         <textarea class="form-control" ng-model="user.interests" ></textarea>
+        <span>{{500 - user.interests.length}}</span>  
     </div>
     <input class="btn btn-info" type="submit" value="Save">
 </form>
