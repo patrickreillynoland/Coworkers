@@ -82,7 +82,9 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.users = UserFactory.query();
 }])
 
-.controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
+.controller("NavController", ["$scope", "MenuService", "UserService", "UserFactory", function($scope, MenuService, UserService, UserFactory){
+    $scope.u = UserFactory.get({ id: $routeParams.id });
+    
     $scope.loggedIn = function() {
         return UserService.currentUser;
     }
