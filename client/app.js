@@ -34,6 +34,10 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         controller: 'UserSearchController',
         requiresLogin: true
     })
+    .when('/locations/:id', {
+        templateUrl:'views/singlelocation.html',
+        controller:'SingleLocationController'
+    })
     .when('/locations', {
         templateUrl: 'views/locations.html',
         controller: 'LocationsController',
