@@ -1,11 +1,12 @@
 <div class="row" id="item-display">
 <div class="container" id="product-list">
     <div id="product-div" ng-repeat="location in locations | filter:'!away'" >
-         <div id="the-product" class="col-sm-4 col-md-3">
-                    <h5 id="prod-title" class="cov-font"> {{ location.name }}</h5>
-                    <h5 id="prod-price" class="cov-font">{{ location.address}}</h5>
-                    <p><a ng-href="/locations/{{ location.locationid }}">See Coworkers</a></p>
-        </div>
+        <div id="location-wrapper">
+            <div id="the-product" class="col-sm-4 col-md-3">
+                <h5 id="prod-title" class="cov-font"> {{ location.name }}</h5>
+                <h5 id="prod-price" class="cov-font">{{ location.address }}</h5>
+                <p><a ng-href="/locations/{{ location.locationid }}">See Coworkers</a></p>
+            </div>
         <div class="clearfix visible-lg" ng-if="($index + 1) % 6 == 0"></div>
         <div class="clearfix visible-md" ng-if="($index + 1) % 4 == 0"></div>
         <div class="clearfix visible-sm" ng-if="($index + 1) % 3 == 0"></div>
