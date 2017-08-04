@@ -60,7 +60,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     } 
     
 }])
-.controller('ProfileViewController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
+.controller('ProfileController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
     $scope.user = UserFactory.get({ id: $routeParams.id });
 }])
 
@@ -76,6 +76,11 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
    $scope.locations = LocationFactory.query();
 
 }])
+
+.controller ('SingleLocationController', ['$scope', 'LocationFactory', '$routeParams', function ($scope, LocationFactory, $routeParams){
+    $scope.location = LocationFactory.get ({ id: $routeParams.id })
+}])
+
 .controller("NavController", ["$scope", "MenuService", "UserService", function($scope, MenuService, UserService){
     $scope.loggedIn = function() {
         return UserService.currentUser;

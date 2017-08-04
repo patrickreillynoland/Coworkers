@@ -20,8 +20,8 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         enforceId: true
     })
     .when('/users/:id', {
-        templateUrl:'views/profileview.html',
-        controller: 'ProfileViewController',
+        templateUrl:'views/profile.html',
+        controller: 'ProfileController',
         requiresLogin: true
     })
     .when('/users', {
@@ -33,6 +33,10 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         templateUrl: 'views/search.html',
         controller: 'UserSearchController',
         requiresLogin: true
+    })
+    .when('/locations/:id', {
+        templateUrl:'views/singlelocation.html',
+        controller:'SingleLocationController'
     })
     .when('/locations', {
         templateUrl: 'views/locations.html',
