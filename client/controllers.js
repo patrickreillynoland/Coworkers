@@ -60,7 +60,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     } 
     
 }])
-.controller('ProfileViewController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
+.controller('ProfileController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
     $scope.user = UserFactory.get({ id: $routeParams.id });
 }])
 

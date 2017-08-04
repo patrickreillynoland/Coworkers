@@ -20,8 +20,8 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
         enforceId: true
     })
     .when('/users/:id', {
-        templateUrl:'views/profileview.html',
-        controller: 'ProfileViewController',
+        templateUrl:'views/profile.html',
+        controller: 'ProfileController',
         requiresLogin: true
     })
     .when('/users', {
