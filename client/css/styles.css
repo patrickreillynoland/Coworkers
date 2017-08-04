@@ -302,10 +302,19 @@ ul, li {
 }
 
 #map_wrapper {
-    height: 400px;
+    height: 600px;
 }
 
 #map_canvas {
-    width: 100%;
+    position: absolute;
+    right: 0px;
+    width: 60%;
     height: 100%;
+}
+#product-div {
+    position: absolute;
+    left: 0px;
+    margin: 10px;
+   padding: 10px;
+   float: left;
 }
