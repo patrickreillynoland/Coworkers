@@ -51,13 +51,16 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 }
     }
 }])
-.controller('EditProfileController',['$scope','UserFactory','$routeParams','$location', function($scope, UserFactory, $routeParams, $location){
+.controller('EditProfileController',['$scope','UserFactory','$routeParams','$location', 'UserService', function($scope, UserFactory, $routeParams, $location, UserService){
     $scope.user = UserFactory.get({ id: $routeParams.id });
     $scope.save = function() {
         $scope.user.$update(function() {
             $location.replace().path('/users/' + $routeParams.id);
         });
-    } 
+    }
+    var me = UserService.currentUser;
+
+    console.log(me);
     
 }])
 .controller('ProfileController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
@@ -82,15 +85,15 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.users = UserFactory.query();
 }])
 
-.controller("NavController", ["$scope", "MenuService", "UserService", "UserFactory", "$routeParams", function($scope, MenuService, UserService, UserFactory, $routeParams){
-    $scope.u = UserFactory.get({ id: $routeParams.id });
+.controller("NavController", ["$scope", "MenuService", "UserService", "UserFactory", function($scope, MenuService, UserService, UserFactory){
+    $scope.userid = UserService.me().userid;
     
     $scope.loggedIn = function() {
         return UserService.currentUser;
     }
     
     MenuService.setMenu([{href:"#", label:"My Profile",
-                dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}],
+                dropdown:[{href:"/profile/" + 1, label:"View Profile"}, {href:"/login", label:"Login"}],
     }]);
     
     $scope.logout = function() {
