@@ -8,7 +8,7 @@
             <div ng-repeat="user in users | filter:searchText">
                 <div class="col-sm-4 col-md-8">
                     <div class="flex flex-column user-card">
-                        <img class="profile-pic" src="/images/placeholder-user-photo.png" />
+                        <img class="profile-pic" src="{{ user.imageurl }}">
                         <h5 class="arvo">{{ user.firstname }} {{ user.lastname }}</h5>
                         <h5 class="arvo">{{ user.displayemail }}</h5>
                         <h5 id="users-skills" class="arvo">{{ user.interests }}</h5>
