@@ -327,3 +327,7 @@ p {
    padding: 10px;
    float: left;
 } */
+#profile-btn {
+    float: right;
+}
+
