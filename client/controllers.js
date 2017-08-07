@@ -66,10 +66,6 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.user = UserFactory.get({ id: $routeParams.id });
 }])
 
-.controller('UserProfileController', ['$scope', 'UserFactory', '$routeParams', '$location', function($scope, UserFactory, $routeParams, $location){
-    $scope.user = UserFactory.get({ id: $routeParams.id });
-
-}])
 .controller('UserSearchController', ['$scope', 'UserFactory', function($scope, UserFactory){
    $scope.users = UserFactory.query();
 

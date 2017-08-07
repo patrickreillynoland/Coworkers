@@ -368,3 +368,15 @@ input#inputPassword3, input#inputPassword4 {
     float: right;
     position: relative;
 }
+
+#map_wrapper {
+    height: 550px;
+    width: 850px;
+    margin-top: 20px;
+    margin-left: 60px;  
+}
+
+#product-list {
+    margin-top: 60px;
+    margin-left: 100px;
+}
