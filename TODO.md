@@ -18,3 +18,16 @@
 * Add "available" indicator to profiles on /locations : (3)
 
 * 
+
+
+-----
+
+DEMO FLOW:
+
+General Overview
+Create new user
+Show all users
+login with Derrick
+show locations
+show individual location
+log into individual location
