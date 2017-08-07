@@ -83,13 +83,8 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.toggle = true;
 }])
 
-<<<<<<< HEAD
-.controller("NavController", ["$scope", "MenuService", "UserService",'$routeParams',"UserFactory", function($scope, MenuService, UserService,$routeParams, UserFactory){
-    $scope.u = UserFactory.get({ id: $routeParams.id });
-=======
 .controller("NavController", ["$scope", "MenuService", "UserService", "UserFactory", function($scope, MenuService, UserService, UserFactory){
     $scope.userid = UserService.me().userid;
->>>>>>> 14c9c4b510f589bfe5882e3848d37916ea434f7c
     
     $scope.loggedIn = function() {
         return UserService.currentUser;
