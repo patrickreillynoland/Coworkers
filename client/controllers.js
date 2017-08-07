@@ -39,7 +39,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
        if ($scope.user.password === $scope.password1) {
      var u = new UserFactory($scope.user);
         u.$save(function(){
-            $location.path('/users');
+            $location.path('/locations');
         }, function(err){
             console.log(err);
         })
