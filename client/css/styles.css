@@ -327,3 +327,18 @@ p {
    padding: 10px;
    float: left;
 } */
+<<<<<<< HEAD
+
+/* 9) Locations View */
+
+/* 10) Single Location View */
+
+.location-user-hide:first-of-type {
+    display: none;
+}
+=======
+#profile-btn {
+    float: right;
+}
+
+>>>>>>> 3621e1bc1aa46fc8dcfea1bda106323e2f5722fe

@@ -4,10 +4,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
         UserService.login($scope.email, $scope.password)
         .then(function() {
             $scope.successAlert = true;
-            setTimeout(function() {
-                $scope.successAlert = false;
-                redirect();
-            }, 500);  
+            $location.replace().path('/locations');
         }, function(err) {
             $scope.failureAlert = true;
             console.log(err);
@@ -51,13 +48,16 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 }
     }
 }])
-.controller('EditProfileController',['$scope','UserFactory','$routeParams','$location', function($scope, UserFactory, $routeParams, $location){
+.controller('EditProfileController',['$scope','UserFactory','$routeParams','$location', 'UserService', function($scope, UserFactory, $routeParams, $location, UserService){
     $scope.user = UserFactory.get({ id: $routeParams.id });
     $scope.save = function() {
         $scope.user.$update(function() {
             $location.replace().path('/users/' + $routeParams.id);
         });
-    } 
+    }
+    var me = UserService.currentUser;
+
+    console.log(me);
     
 }])
 .controller('ProfileController', ['$scope','$routeParams', 'UserFactory', function($scope, $routeParams, UserFactory){
@@ -80,17 +80,23 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 .controller ('SingleLocationController', ['$scope', 'LocationFactory', '$routeParams', 'UserFactory', function($scope, LocationFactory, $routeParams, UserFactory){
     $scope.location = LocationFactory.get ({ id: $routeParams.id });
     $scope.users = UserFactory.query();
+    $scope.toggle = true;
 }])
 
+<<<<<<< HEAD
 .controller("NavController", ["$scope", "MenuService", "UserService",'$routeParams',"UserFactory", function($scope, MenuService, UserService,$routeParams, UserFactory){
     $scope.u = UserFactory.get({ id: $routeParams.id });
+=======
+.controller("NavController", ["$scope", "MenuService", "UserService", "UserFactory", function($scope, MenuService, UserService, UserFactory){
+    $scope.userid = UserService.me().userid;
+>>>>>>> 14c9c4b510f589bfe5882e3848d37916ea434f7c
     
     $scope.loggedIn = function() {
         return UserService.currentUser;
     }
     
     MenuService.setMenu([{href:"#", label:"My Profile",
-                dropdown:[{href:"/profile", label:"View Profile"}, {href:"/login", label:"Login"}],
+                dropdown:[{href:"/users/me/update", label:"View Profile"}, {href:"/login", label:"Login"}],
     }]);
     
     $scope.logout = function() {
