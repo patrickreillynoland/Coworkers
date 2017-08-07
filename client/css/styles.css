@@ -230,6 +230,17 @@ p {
 #signup-wrapper {
     padding: 1em;
 }
+input#first-name, input#last-name{
+    width: 20%;
+}
+
+input#inputEmail3{
+    width: 30%;
+}
+
+input#inputPassword3, input#inputPassword4 {
+    width: 50%;
+}
 
 /* 6) Additional Info View */
 #add-info-wrapper {
