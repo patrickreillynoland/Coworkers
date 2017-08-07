@@ -239,6 +239,17 @@ p {
 #signup-wrapper {
     padding: 1em;
 }
+input#first-name, input#last-name{
+    width: 20%;
+}
+
+input#inputEmail3{
+    width: 30%;
+}
+
+input#inputPassword3, input#inputPassword4 {
+    width: 50%;
+}
 
 /* 6) Additional Info View */
 #add-info-wrapper {
@@ -319,17 +330,11 @@ p {
 
 }
 
-#map_wrapper {
-    height: 600px;
+#profile-btn {
+    float: right;
 }
 
-#map_canvas {
-    position: absolute;
-    right: 0px;
-    width: 60%;
-    height: 100%;
-}
-/* #product-div {
+  /* #product-list{
     position: absolute;
     left: 0px;
     margin: 10px;
@@ -339,6 +344,18 @@ p {
 
 /* 9) Locations View */
 
+#map_wrapper {
+    height: 600px;
+}
+
+ #map_canvas {
+      /* position: absolute; 
+    right: 0px;
+    width: 60%;  */
+     height: 100%; 
+} 
+
+
 /* 10) Single Location View */
 
 .location-user-hide:first-of-type {
@@ -347,7 +364,7 @@ p {
 #profile-btn {
     float: right;
 }
-#singl-location-map {
+#single-location-map {
     float: right;
     position: relative;
 }
