@@ -4,6 +4,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
         UserService.login($scope.email, $scope.password)
         .then(function() {
             $scope.successAlert = true;
+            UserService.loggedIn = true;
             $location.replace().path('/locations');
         }, function(err) {
             $scope.failureAlert = true;
@@ -13,6 +14,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 
     $scope.logout = function() {
         UserService.logout();
+        UserService.loggedIn = false;
         redirect();
     }
 
@@ -83,12 +85,11 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.toggle = true;
 }])
 
-.controller("NavController", ["$scope", "MenuService", "UserService", "UserFactory", function($scope, MenuService, UserService, UserFactory){
+.controller("NavController", ["$scope", "$rootScope", "MenuService", "UserService", "UserFactory", function($scope, $rootScope, MenuService, UserService, UserFactory){
+    
     $scope.userid = UserService.me().userid;
     
-    $scope.loggedIn = function() {
-        return UserService.currentUser;
-    }
+    $scope.loggedIn = UserService.loggedIn;
     
     MenuService.setMenu([{href:"#", label:"My Profile",
                 dropdown:[{href:"/users/me/update", label:"View Profile"}, {href:"/login", label:"Login"}],
@@ -102,6 +103,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
         }
         var c = confirm('Sure you want to log out?');
         if (c) {
+            UserService.loggedIn = false;
             UserService.logout();
         } else {
             return;
