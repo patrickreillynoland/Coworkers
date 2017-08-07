@@ -25,6 +25,7 @@ ul, li {
 
 p {
     font-size:  1.6em;
+    font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
 /* General Styling */
@@ -107,6 +108,10 @@ p {
     color: #f1f1f1;
 }
 
+.lightgreen {
+    color: lightgreen;
+}
+
 /* Fonts */
 .graduate {
     font-family: 'Graduate', cursive;
@@ -118,6 +123,10 @@ p {
 
 .arvo {
     font-family: 'Arvo', serif;
+}
+
+.archivo {
+    font-family: 'Archivo', sans-serif;
 }
 
 /* 2) Index Styling */
@@ -244,7 +253,7 @@ p {
     padding: 8px;
     height: 150px;
     margin: 10px;
-    width: 40em;
+    width: 100%;
 }
 
 .profile-pic {
@@ -327,7 +336,6 @@ p {
    padding: 10px;
    float: left;
 } */
-<<<<<<< HEAD
 
 /* 9) Locations View */
 
@@ -336,9 +344,10 @@ p {
 .location-user-hide:first-of-type {
     display: none;
 }
-=======
 #profile-btn {
     float: right;
 }
-
->>>>>>> 3621e1bc1aa46fc8dcfea1bda106323e2f5722fe
+#singl-location-map {
+    float: right;
+    position: relative;
+}

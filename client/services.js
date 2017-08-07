@@ -1,5 +1,7 @@
 angular.module('Coworkers.services', [])
    .service('UserService', ['$http', '$location', function($http, $location) {
+    var loggedIn = false;
+    
     var currentUser;
 
     this.isLoggedIn = function() {
