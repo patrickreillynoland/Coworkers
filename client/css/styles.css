@@ -214,14 +214,30 @@ p {
     font-size: 70px;
 }
 
+#welcome-2-content {
+    display: block;
+}
+
 #welcome-2-text {
     margin-top: 20px;
 }
 
+#welcome-2-users {
+
+}
+
 #welcome-2-map {
     position: relative;
-    width: 25em;
-    margin: 20px;
+    margin: 10px;
+}
+
+#welcome-2-users-image {
+    max-width: 400px;
+    float: right;
+}
+
+#welcome-2-map-image {
+    max-width: 530px;
 }
 
 #jumbotron-layer {
@@ -252,7 +268,6 @@ p {
 }
 
 #welcome-footer {
-    height: 12em;
     margin-bottom: 0;
 }
 
@@ -529,7 +544,7 @@ width: 60%;  */
     padding-left: 0;
 }
  
-   #map_wrapper_multiple {
+#map_wrapper_multiple {
     height: 550px;
     width: 850px;
     margin-top: 20px;
