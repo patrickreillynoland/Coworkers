@@ -405,36 +405,20 @@ input#profile-btn {
 
 /* 9) Locations View */
 
-#map_wrapper {
-    height: 100%;
+#map_wrapper_multiple {
+    height: 575px;
+    width: 700px;
+    margin-top: 60px;
+    margin-left: 50px;
 }
-
-#map_canvas {
-<<<<<<< HEAD
-    /* position: absolute; 
-right: 0px;
-width: 60%;  */
-    height: 100%;
-}
-=======
- position: absolute; 
-right: 0px;
-width: 80%;  
-    height: 100%; 
-  
-} 
->>>>>>> a8ebd59112fb6e910e48b3f4d16c065030aa8d60
 
 #the-product {
     border: 1px solid #fff;
     padding: 10PX;
     margin-bottom: 10px;
-<<<<<<< HEAD
-}
-=======
     width: 30em;
-} 
->>>>>>> a8ebd59112fb6e910e48b3f4d16c065030aa8d60
+    margin-right: 45px;
+}
 
 #the-product:hover {
     border-color: blue;
@@ -442,6 +426,14 @@ width: 80%;
 
 
 /* 10) Single Location View */
+
+#map_wrapper {
+    height: 100%;
+}
+
+#map_canvas {
+    height: 100%;
+}
 
 
 /* Search Field */
@@ -581,13 +573,6 @@ width: 80%;
 #search-container {
     float: right;
     padding-left: 0;
-}
-
-#map_wrapper_multiple {
-    height: 575px;
-    width: 700px;
-    margin-top: 60px;
-    margin-left: 50px;
 }
 
 #product-list {
