@@ -381,16 +381,18 @@ input#profile-btn {
 }
 
 #map_canvas {
-/* position: absolute; 
+ position: absolute; 
 right: 0px;
-width: 60%;  */
+width: 80%;  
     height: 100%; 
+  
 } 
 
  #the-product {
     border: 1px solid #ccc;
     padding: 10PX;
     margin-bottom: 10px;
+    width: 30em;
 } 
 
 #the-product:hover {
