@@ -491,3 +491,15 @@ width: 60%;  */
     float: right;
     padding-left: 0;
 }
+
+#map_wrapper {
+    height: 550px;
+    width: 850px;
+    margin-top: 20px;
+    margin-left: 60px;  
+}
+
+#product-list {
+    margin-top: 60px;
+    margin-left: 100px;
+}
