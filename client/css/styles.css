@@ -482,6 +482,14 @@ width: 60%;  */
     margin-top: 10px;
     margin-bottom: 50px;
 }
+
+#single_map_wrapper {
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 60px;  
+}
+
 #footer {
     padding-top: 10px;
 }
