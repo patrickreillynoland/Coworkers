@@ -410,17 +410,31 @@ input#profile-btn {
 }
 
 #map_canvas {
+<<<<<<< HEAD
     /* position: absolute; 
 right: 0px;
 width: 60%;  */
     height: 100%;
 }
+=======
+ position: absolute; 
+right: 0px;
+width: 80%;  
+    height: 100%; 
+  
+} 
+>>>>>>> a8ebd59112fb6e910e48b3f4d16c065030aa8d60
 
 #the-product {
     border: 1px solid #fff;
     padding: 10PX;
     margin-bottom: 10px;
+<<<<<<< HEAD
 }
+=======
+    width: 30em;
+} 
+>>>>>>> a8ebd59112fb6e910e48b3f4d16c065030aa8d60
 
 #the-product:hover {
     border-color: blue;
