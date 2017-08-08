@@ -18,7 +18,7 @@
         <meta property="twitter:description" content="{{ seo.description }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Arvo|Graduate|Archivo|Open+Sans+Condensed:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Graduate|Archivo|Open+Sans+Condensed:300|Work+Sans:800" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <title>Coworkers</title>
     </head>
@@ -35,11 +35,11 @@
                         <div id="nav-link-wrap">
                             <span ng-repeat-start="menu_element in globalMenu"></span>
                             <li ng-if="menu_element.dropdown !== undefined">
-                                <a ng-href="{{menu_element.href}}" class="dropdown-toggle graduate">
+                                <a ng-href="{{menu_element.href}}" class="dropdown-toggle work-sans">
                                     {{menu_element.label}}
                                     <b class="caret"></b>
                                 </a>
-                                <ul id="nav-dropdown" class="dropdown-menu graduate">
+                                <ul id="nav-dropdown" class="dropdown-menu work-sans">
                                     <li ng-repeat="sub_element in $parent.menu_element.dropdown">
                                         <a ng-href="{{sub_element.href}}">{{sub_element.label}}</a>
                                     </li>
@@ -54,7 +54,7 @@
                                 </a>
                             </li>
                             <span ng-repeat-end></span>
-                            <a href="/search" class="graduate offwhite-text" style="text-decoration: none;">All Users</a>
+                            <a href="/search" class="work-sans offwhite-text" style="text-decoration: none;">All Users</a>
                         </div>
                     </div>
                 </div>
