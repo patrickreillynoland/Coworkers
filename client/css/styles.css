@@ -129,6 +129,10 @@ p {
     font-family: 'Archivo', sans-serif;
 }
 
+.work-sans {
+    font-family: 'Work Sans', sans-serif;
+}
+
 /* 2) Index Styling */
 .topnav {
     overflow: hidden;
@@ -197,6 +201,10 @@ p {
     display: block;
 }
 
+#welcome-3 {
+    height: 10em;
+}
+
 #welcome-header {
     font-size: 6em;
 }
@@ -212,7 +220,8 @@ p {
 
 #welcome-2-map {
     position: relative;
-    top: 5em;
+    width: 25em;
+    margin: 20px;
 }
 
 #jumbotron-layer {
@@ -240,6 +249,11 @@ p {
     width: 50%;
     margin: 10px;
     margin-left: 25%;
+}
+
+#welcome-footer {
+    height: 12em;
+    margin-bottom: 0;
 }
 
 /* 4) Login View */
