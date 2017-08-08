@@ -368,6 +368,16 @@ width: 60%;  */
     height: 100%; 
 } 
 
+ #the-product {
+    border: 1px solid #ccc;
+    padding: 10PX;
+    margin-bottom: 10px;
+} 
+
+#the-product:hover {
+    border-color: blue;
+}
+
 
 /* 10) Single Location View */
 
