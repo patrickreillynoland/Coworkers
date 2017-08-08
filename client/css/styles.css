@@ -13,7 +13,10 @@
 /* 7) Users View
 
 /* 1) Elements and General Classes */
+
+
 /* Elements */
+
 body {
     height: 100%;
     background-color: #f1f1f1;
@@ -24,15 +27,19 @@ ul, li {
 }
 
 p {
-    font-size:  1.6em;
+    font-size: 1.6em;
     font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
+<<<<<<< HEAD
 a:hover {
     text-decoration: none;
 }
+=======
+>>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
 
 /* General Styling */
+
 .hidden {
     display: none;
 }
@@ -64,7 +71,9 @@ a:hover {
     align-items: center;
 }
 
+
 /* Colors */
+
 .rich-red {
     background-color: #703030;
 }
@@ -117,7 +126,9 @@ a:hover {
     color: lightgreen;
 }
 
+
 /* Fonts */
+
 .graduate {
     font-family: 'Graduate', cursive;
 }
@@ -138,34 +149,37 @@ a:hover {
     font-family: 'Work Sans', sans-serif;
 }
 
+
 /* 2) Index Styling */
+
 .topnav {
     overflow: hidden;
     height: 5.7em;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 .topnav a:hover {
-  color: #44b6c8;
-  text-decoration: underline;
+    color: #44b6c8;
+    text-decoration: underline;
 }
 
 .topnav .icon {
-  display: none;
+    display: none;
 }
 
 #navbar {
     margin-bottom: 0;
 }
+
 #nav-link-wrap {
     margin-top: 10px;
     margin-left: 20px;
@@ -191,7 +205,9 @@ a:hover {
     float: right;
 }
 
+
 /* 3) Welcome View */
+
 #welcome {
     background-image: url("../images/welcome_1920x1280.jpg");
     background-size: 100%;
@@ -213,6 +229,7 @@ a:hover {
 #welcome-header {
     font-size: 6em;
 }
+
 #welcome-2-header {
     display: block;
     padding-top: 30px;
@@ -277,21 +294,26 @@ a:hover {
     height: 
 }
 
+
 /* 4) Login View */
+
 #login-wrapper {
     margin-left: 20%;
     padding: 0 15% 0 15%;
 }
 
+
 /* 5) Signup View */
+
 #signup-wrapper {
     padding: 1em;
 }
-input#first-name, input#last-name{
+
+input#first-name, input#last-name {
     width: 20%;
 }
 
-input#inputEmail3{
+input#inputEmail3 {
     width: 30%;
 }
 
@@ -299,12 +321,16 @@ input#inputPassword3, input#inputPassword4 {
     width: 50%;
 }
 
+
 /* 6) Additional Info View */
+
 #add-info-wrapper {
     padding: 15px;
 }
 
+
 /* 7) Users View */
+
 .user-card {
     text-align: right;
     border: 2px solid lightgrey;
@@ -325,9 +351,9 @@ input#inputPassword3, input#inputPassword4 {
     background-color: red;
     margin-top: 1em;
 }
-fdiv.flex.flex-column.flex-center.profile-wrapper{
-    padding: 15px;
 
+fdiv.flex.flex-column.flex-center.profile-wrapper {
+    padding: 15px;
 }
 
 #users-container {
@@ -359,7 +385,9 @@ fdiv.flex.flex-column.flex-center.profile-wrapper{
     margin-left: 15%;
 }
 
+
 /* 8) Profile View */
+
 #profile-container {
     margin-top: 6em;
     margin-bottom: 6em;
@@ -377,6 +405,7 @@ fdiv.flex.flex-column.flex-center.profile-wrapper{
     width: 9em;
 }
 
+<<<<<<< HEAD
 #profile-icons-container {
     width: 50em;
     border: 2px solid grey;
@@ -401,6 +430,12 @@ fdiv.flex.flex-column.flex-center.profile-wrapper{
     width: 50em;
     height: 24em;
 
+=======
+.profile-wrapper {
+    border: 2px solid grey;
+    width: 50em;
+    height: 30em;
+>>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
 }
 
 input#profile-btn {
@@ -408,7 +443,8 @@ input#profile-btn {
     margin-top: 2px;
 }
 
-  /* #product-list{
+
+/* #product-list{
     position: absolute;
     left: 0px;
     margin: 10px;
@@ -416,24 +452,23 @@ input#profile-btn {
    float: left;
 } */
 
+
 /* 9) Locations View */
 
-#map_wrapper {
-    height: 100%;
+#map_wrapper_multiple {
+    height: 575px;
+    width: 700px;
+    margin-top: 60px;
+    margin-left: 50px;
 }
 
-#map_canvas {
-/* position: absolute; 
-right: 0px;
-width: 60%;  */
-    height: 100%; 
-} 
-
- #the-product {
-    border: 1px solid #ccc;
+#the-product {
+    border: 1px solid #fff;
     padding: 10PX;
     margin-bottom: 10px;
-} 
+    width: 30em;
+    margin-right: 45px;
+}
 
 #the-product:hover {
     border-color: blue;
@@ -442,57 +477,74 @@ width: 60%;  */
 
 /* 10) Single Location View */
 
+#map_wrapper {
+    height: 100%;
+}
+
+#map_canvas {
+    height: 100%;
+}
+
+
 /* Search Field */
+
 .search-form .form-group {
-  float: left !important;
-  transition: all 0.35s, border-radius 0s;
-  width: 32px;
-  height: 32px;
-  background-color: #fff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+    float: left !important;
+    transition: all 0.35s, border-radius 0s;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-radius: 4px;
+    border: 1px solid #ccc;
 }
+
 .search-form .form-group input.form-control {
-  padding-right: 20px;
-  border: 0 none;
-  background: transparent;
-  box-shadow: none;
-  display:block;
+    padding-right: 20px;
+    border: 0 none;
+    background: transparent;
+    box-shadow: none;
+    display: block;
 }
+
 .search-form .form-group input.form-control::-webkit-input-placeholder {
-  display: none;
+    display: none;
 }
+
 .search-form .form-group input.form-control:-moz-placeholder {
-  /* Firefox 18- */
-  display: none;
+    /* Firefox 18- */
+    display: none;
 }
+
 .search-form .form-group input.form-control::-moz-placeholder {
-  /* Firefox 19+ */
-  display: none;
+    /* Firefox 19+ */
+    display: none;
 }
+
 .search-form .form-group input.form-control:-ms-input-placeholder {
-  display: none;
+    display: none;
 }
-.search-form .form-group:hover,
-.search-form .form-group.hover {
-  width: 100%;
-  border-radius: 4px;
+
+.search-form .form-group:hover, .search-form .form-group.hover {
+    width: 100%;
+    border-radius: 4px;
 }
+
 .search-form .form-group span.form-control-feedback {
-  position: absolute;
-  top: -1px;
-  right: -2px;
-  z-index: 2;
-  display: block;
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  text-align: center;
-  color: #703030;
-  left: initial;
-  font-size: 14px;
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #703030;
+    left: initial;
+    font-size: 14px;
 }
+
 
 /* End Search Field */
 
@@ -529,9 +581,11 @@ width: 60%;  */
 #single-profile-info-container {
     margin-top: 1em;
 }
+
 #profile-btn {
     float: left;
 }
+
 #single-location-map {
     float: right;
     position: relative;
@@ -544,7 +598,7 @@ width: 60%;  */
     height: 300px;
     width: 300px;
     margin-top: 20px;
-    margin-left: 60px;  
+    margin-left: 60px;
 }
 
 #footer {
@@ -570,6 +624,7 @@ width: 60%;  */
     float: right;
     padding-left: 0;
 }
+<<<<<<< HEAD
  
 #map_wrapper_multiple {
     height: 550px;
@@ -577,6 +632,8 @@ width: 60%;  */
     margin-top: 20px;
     margin-left: 60px;   
 }   
+=======
+>>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
 
 #product-list {
     margin-top: 60px;
