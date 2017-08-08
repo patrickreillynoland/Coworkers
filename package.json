@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/djenkins96/full-stack-group-p2#readme",
   "dependencies": {
+    "angular-material": "^1.1.4",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",

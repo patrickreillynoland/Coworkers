@@ -17,7 +17,7 @@
 
 * Add "available" indicator to profiles on /locations : (3)
 
-* 
+* Add Search All Users to Nav Bar : (2)
 
 
 -----

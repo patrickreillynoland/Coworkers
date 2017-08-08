@@ -23,41 +23,44 @@
         <title>Coworkers</title>
     </head>
     <body>
-        <nav id="navbar" class="navbar navbar-default rich-red">
-            <div class="topnav" id="myTopnav" ng-controller="NavController">
-                <div id="nav-header-box" class="navbar-header">
-                    <a class="navbar-logo" href="/">
-                        <img id="header-logo" src="images/Coworkers_RedandGold_1200x206.png"/>
-                    </a>
-                </div>
-                <div id="main-nav">
-                    <div id="nav-link-wrap">
-                        <span ng-repeat-start="menu_element in globalMenu"></span>
-                        <li ng-if="menu_element.dropdown !== undefined">
-                            <a ng-href="{{menu_element.href}}" class="dropdown-toggle graduate">
-                                {{menu_element.label}}
-                                <b class="caret"></b>
-                            </a>
-                            <ul id="nav-dropdown" class="dropdown-menu graduate">
-                                <li ng-repeat="sub_element in $parent.menu_element.dropdown">
-                                    <a ng-href="{{sub_element.href}}">{{sub_element.label}}</a>
-                                </li>
-                                <li>
-                                    <a ng-click="logout()">Logout</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li ng-if="menu_element.dropdown === undefined">
-                            <a ng-href="{{menu_element.href}}">
-                                {{menu_element.label}}
-                            </a>
-                        </li>
-                        <span ng-repeat-end></span>
+        <div class="controller">
+            <nav id="navbar" class="navbar navbar-default rich-red">
+                <div class="topnav" id="myTopnav" ng-controller="NavController">
+                    <div id="nav-header-box" class="navbar-header">
+                        <a class="navbar-logo" href="/">
+                            <img id="header-logo" src="images/Coworkers_RedandGold_1200x206.png"/>
+                        </a>
+                    </div>
+                    <div id="main-nav">
+                        <div id="nav-link-wrap">
+                            <span ng-repeat-start="menu_element in globalMenu"></span>
+                            <li ng-if="menu_element.dropdown !== undefined">
+                                <a ng-href="{{menu_element.href}}" class="dropdown-toggle graduate">
+                                    {{menu_element.label}}
+                                    <b class="caret"></b>
+                                </a>
+                                <ul id="nav-dropdown" class="dropdown-menu graduate">
+                                    <li ng-repeat="sub_element in $parent.menu_element.dropdown">
+                                        <a ng-href="{{sub_element.href}}">{{sub_element.label}}</a>
+                                    </li>
+                                    <li>
+                                        <a ng-click="logout()">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li ng-if="menu_element.dropdown === undefined">
+                                <a ng-href="{{menu_element.href}}">
+                                    {{menu_element.label}}
+                                </a>
+                            </li>
+                            <span ng-repeat-end></span>
+                            <a href="/search" class="graduate offwhite-text" style="text-decoration: none;">All Users</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-        <div ng-view></div>
+            </nav>
+            <div ng-view></div>
+        </div>
         <script
 			src="http://code.jquery.com/jquery-3.2.1.js"
 			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
