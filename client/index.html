@@ -33,6 +33,8 @@
                     </div>
                     <div id="main-nav">
                         <div id="nav-link-wrap">
+                            <a href="/search" class="work-sans offwhite-text" style="text-decoration: none;">Users</a>
+                            <a href="/locations" class="work-sans offwhite-text" style="text-decoration: none;">Locations</a>
                             <span ng-repeat-start="menu_element in globalMenu"></span>
                             <li ng-if="menu_element.dropdown !== undefined">
                                 <a ng-href="{{menu_element.href}}" class="dropdown-toggle work-sans">
@@ -54,7 +56,6 @@
                                 </a>
                             </li>
                             <span ng-repeat-end></span>
-                            <a href="/search" class="work-sans offwhite-text" style="text-decoration: none;">Search Users</a>
                         </div>
                     </div>
                 </div>

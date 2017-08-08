@@ -28,6 +28,10 @@ p {
     font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 /* General Styling */
 .hidden {
     display: none;
@@ -92,6 +96,7 @@ p {
 .sandstone-text {
     color: #E3CDA4;
 }
+
 .auburn {
     background-color: #C77966;
 }
@@ -269,6 +274,7 @@ p {
 
 #welcome-footer {
     margin-bottom: 0;
+    height: 
 }
 
 /* 4) Login View */
@@ -356,6 +362,7 @@ fdiv.flex.flex-column.flex-center.profile-wrapper{
 /* 8) Profile View */
 #profile-container {
     margin-top: 6em;
+    margin-bottom: 6em;
 }
 
 #profile-pic-wrapper {
@@ -369,10 +376,30 @@ fdiv.flex.flex-column.flex-center.profile-wrapper{
     height: 9em;
     width: 9em;
 }
+
+#profile-icons-container {
+    width: 50em;
+    border: 2px solid grey;
+}
+#profile-icons {
+    text-align: center;
+    margin: 15px;
+    width: 100%;
+    display: block;
+    font-size: 2em;
+}
+.profile-icon {
+    margin-right: 15px;
+}
+
+.profile-icon:first-of-type {
+    margin-left: 0;
+}
+
 .profile-wrapper {
     border: 2px solid grey;
     width: 50em;
-    height: 30em;
+    height: 24em;
 
 }
 
