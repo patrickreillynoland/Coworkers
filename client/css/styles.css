@@ -290,6 +290,10 @@ input#inputPassword3, input#inputPassword4 {
     background-color: red;
     margin-top: 1em;
 }
+fdiv.flex.flex-column.flex-center.profile-wrapper{
+    padding: 15px;
+
+}
 
 #users-container {
     margin-top: 20px;
@@ -343,8 +347,9 @@ input#inputPassword3, input#inputPassword4 {
 
 }
 
-#profile-btn {
+input#profile-btn {
     float: right;
+    margin-top: 2px;
 }
 
   /* #product-list{
@@ -491,13 +496,13 @@ width: 60%;  */
     float: right;
     padding-left: 0;
 }
-
-#map_wrapper {
+ 
+   #map_wrapper_multiple {
     height: 550px;
     width: 850px;
     margin-top: 20px;
-    margin-left: 60px;  
-}
+    margin-left: 60px;   
+}   
 
 #product-list {
     margin-top: 60px;
