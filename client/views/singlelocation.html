@@ -8,7 +8,7 @@
                         <div class="flex flex-column user-card">
                             <img class="profile-pic" src="{{ user.imageurl }}" />
                             <div class="" id="single-profile-info-container">
-                                <h3 class="arvo single-location-user-info">{{ user.firstname }} {{ user.lastname }}</h5>
+                                <h3 class="work-sans single-location-user-info">{{ user.firstname }} {{ user.lastname }}</h5>
                                 <h5 class="arvo single-location-user-info">{{ user.displayemail }}</h5>
                                 <h5 id="users-skills" class="arvo single-location-user-info">{{ user.interests }}</h5>
                                 <h5 ng-class="( {{ user.userstatus }}  == available ) ? 'lightgreen'" class="arvo single-location-user-info">{{ user.userstatus }} <span class="glyphicon glyphicon-record"></span></h5>
@@ -21,7 +21,7 @@
     </div>
     <div id="single-location-map" class="col-md-5 col-sm-12 col-xs-12">
         <div id="single-location-information">
-            <h2 class="single-location-info arvo" style="text-decoration: underline;">{{ location.name }}</h2>
+            <h2 class="single-location-info work-sans" style="text-decoration: underline;">{{ location.name }}</h2>
             <h3 class="single-location-info archivo">{{ location.address }}</h3>
             <h5 class="single-location-info archivo">Hours: {{ location.hours }}</h5>
         </div>
