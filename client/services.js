@@ -1,5 +1,5 @@
 angular.module('Coworkers.services', [])
-   .service('UserService', ['$http', '$location', function($http, $location) {
+.service('UserService', ['$http', '$location', function($http, $location) {
     var loggedIn = false;
     
     var currentUser;

@@ -1,4 +1,4 @@
-angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworkers.factories', 'Coworkers.services'])
+angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworkers.factories', 'Coworkers.services', 'Coworkers.directives'])
 .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
@@ -22,18 +22,21 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
         redirect();
     })
 
+
     function redirect() {
         var dest = $location.search().dest;
         if (!dest) { dest = '/'; }
         $location.replace().path(dest).search('dest', null);
     }
+
     function userLink() {
         window.location.assign('/users');
     }
 }])
 
-.controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', function($scope, $location, $routeParams, UserFactory, UserService) {
+.controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
     $scope.users=UserFactory.query();
+    
 }])
 
 .controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
@@ -66,7 +69,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
     $scope.user = UserFactory.get({ id: $routeParams.id });
 }])
 
-.controller('UserSearchController', ['$scope', 'UserFactory', function($scope, UserFactory){
+.controller('UserSearchController', ['$scope', 'UserFactory', 'UserService', function($scope, UserFactory, UserService){
    $scope.users = UserFactory.query();
 
 }])
@@ -82,10 +85,11 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworker
 }])
 
 .controller("NavController", ["$scope", "$rootScope", "MenuService", "UserService", "UserFactory", function($scope, $rootScope, MenuService, UserService, UserFactory){
-    
-    $scope.userid = UserService.me().userid;
-    
-    $scope.loggedIn = UserService.loggedIn;
+    $scope.nametest = function() {
+        return UserService.currentUser;
+    }
+
+    $scope.userid = UserService.me()
     
     MenuService.setMenu([{href:"#", label:"My Profile",
                 dropdown:[{href:"/users/me/update", label:"View Profile"}, {href:"/login", label:"Login"}],
