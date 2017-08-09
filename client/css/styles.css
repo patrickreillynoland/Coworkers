@@ -9,12 +9,15 @@
 /* 3) Welcome View
 /* 4) Login View
 /* 5) Signup View
-/* 6) Additional Info View
-/* 7) Users View
+/* 6) Edit Profile View
+/* 7) Additional Info View
+/* 8) Users View
+/* 9) Locations View
+/* 10) Single Location View
+/* 11) Footer Styling
+
 
 /* 1) Elements and General Classes */
-
-
 /* Elements */
 
 body {
@@ -351,6 +354,9 @@ input#inputPassword3, input#inputPassword4 {
     padding: 15px;
 }
 
+#update-content {
+    margin-top: 7em;
+}
 
 /* 7) Users View */
 
@@ -401,7 +407,8 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
 }
 
 #users-list {
-    float: right;
+    width: 80%;
+    margin-left: 7em;
 }
 
 #users-skills {
@@ -420,7 +427,7 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     position: relative;
     width: 9em;
     height: 9em;
-    top: -10px;
+    top: -30px;
 }
 
 #profile-pic {
@@ -452,7 +459,12 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
 .profile-wrapper {
     border: 2px solid grey;
     width: 50em;
+<<<<<<< HEAD
     height: 24em;
+=======
+    height: 28em;
+    padding-bottom: 20px;
+>>>>>>> 81c5de06f41be5d5a18a350bb0de026db92ab9ac
 }
 
 input#profile-btn {
@@ -461,20 +473,11 @@ input#profile-btn {
 }
 
 
-/* #product-list{
-    position: absolute;
-    left: 0px;
-    margin: 10px;
-   padding: 10px;
-   float: left;
-} */
-
-
 /* 9) Locations View */
 
 #map_wrapper_multiple {
-    height: 575px;
-    width: 700px;
+    height: 40em;
+    width: 40em;
     margin-top: 60px;
     margin-left: 50px;
     margin-right: 20px;
@@ -496,6 +499,10 @@ input#profile-btn {
     border-color: burlywood;
 }
 
+#product-list {
+    margin-top: 60px;
+    margin-left: 30px;
+}
 
 /* 10) Single Location View */
 
@@ -601,6 +608,11 @@ input#profile-btn {
     margin-bottom: .6em;
 }
 
+#single-location-youarehere {
+    text-align: center; 
+    text-decoration: underline;
+}
+
 #single-profile-info-container {
     margin-top: 1em;
 }
@@ -624,6 +636,7 @@ input#profile-btn {
     margin-left: 60px;
 }
 
+/* 11) Footer Styling */
 #footer {
     padding-top: 10px;
 }
@@ -647,7 +660,10 @@ input#profile-btn {
     float: right;
     padding-left: 0;
 }
+<<<<<<< HEAD
  
+=======
+>>>>>>> 81c5de06f41be5d5a18a350bb0de026db92ab9ac
 /* #map_wrapper_multiple {
     height: 550px;
     width: 850px;
@@ -743,4 +759,3 @@ a.socialIcon:hover, .socialHoverClass {
 /* a {
  background-color: #D3D3D3;   
 } */
-

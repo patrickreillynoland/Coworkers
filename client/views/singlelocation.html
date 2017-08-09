@@ -20,8 +20,9 @@
         </div>
     </div>
     <div id="single-location-map" class="col-md-5 col-sm-12 col-xs-12">
+        <h2 class="work-sans">You Are Here</h2>
         <div id="single-location-information">
-            <h2 class="single-location-info work-sans" style="text-decoration: underline;">{{ location.name }}</h2>
+            <h3 class="single-location-info work-sans">{{ location.name }}</h3>
             <h3 class="single-location-info archivo">{{ location.address }}</h3>
             <h5 class="single-location-info archivo">Hours: {{ location.hours }}</h5>
         </div>
@@ -54,15 +55,15 @@
                 // Info Window Content
                 var infoWindowContent = [
                     ['<div class="info_content">' +
-                        '<h3>Workaholics</h3>' +
-                        '<p>We are the coworking space for the night owlers. <a href="http://worklatenights.com/"> worklatenights.com/</a>.</p>' + '</div>'],
+                        '<h4>Workaholics</h4>' +
+                        '<p style="font-size: 10px">We are the coworking space for the night owlers. <a href="http://worklatenights.com/"> Go to worklatenights.com/</a>.</p>' + '</div>'],
                     ['<div class="info_content">' +
-                        '<h3>Society of Work</h3>' +
-                        '<p>Everyone here is into building things—startups, communities, freelance networks, individual relationships. Anything with a pulse. Please visit us at: <a href="http://societyofwork.com">societyofwork.com</a> .</p>' +
+                        '<h4>Society of Work</h4>' +
+                        '<p style="font-size: 10px">Everyone here is into building things—startups, communities, freelance networks, individual relationships. Anything with a pulse. Please visit us at: <a href="http://societyofwork.com">Go to societyofwork.com</a> .</p>' +
                         '</div>'],
                     ['<div class="info_content">' +
-                        '<h3>Workhorse</h3>' +
-                        '<p> All you need to haul your workload and nothing else. More info at: <a href="https://gettowork.horse">gettowork.horse</a> .</p>' +
+                        '<h4>Workhorse</h4>' +
+                        '<p style="font-size: 10px"> All you need to haul your workload and nothing else. More info at: <a href="https://gettowork.horse">Go to gettowork.horse</a> .</p>' +
                         '</div>']
                 ];
 
@@ -86,6 +87,8 @@
                         infoWindow.open(map, marker);
                     }
                 })(marker, i));
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
 
                 // Automatically center the map fitting all markers on the screen
                 map.fitBounds(bounds);
