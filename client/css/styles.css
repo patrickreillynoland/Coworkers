@@ -327,19 +327,20 @@ a:hover {
 } 
 
 button.btn.btn-success.work-sans {
-    position: absolute;
-    top: 170px;
-    left: 667px;
-    float: right;
-    /* margin-right: 500px; */
+    position: relative;
+     /* margin-right: 500px;  */
+}
+
+#character-count{
+    max-width: 500px;
 }
 
 input#first-name, input#last-name {
-    width: 30%;
+    width: 50%;
 }
 
 input#inputEmail3 {
-    width: 30%;
+    width: 50%;
     
 }
 
