@@ -1,11 +1,12 @@
 angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimate', 'Coworkers.factories', 'Coworkers.services', 'Coworkers.directives'])
-.controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+.controller('LoginController', ['$scope', '$rootScope', '$location', 'UserService', function($scope, $rootScope, $location, UserService) {
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
         .then(function() {
             $scope.successAlert = true;
-            UserService.loggedIn = true;
+            $rootScope.loggedIn = true;
             $location.replace().path('/locations');
+            console.log(UserService.loggedIn);
         }, function(err) {
             $scope.failureAlert = true;
             console.log(err);
@@ -74,6 +75,9 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
 .controller('LocationsController', ['$scope', 'LocationFactory', function($scope, LocationFactory){
    $scope.locations = LocationFactory.query();
 
+   $scope.tellMe = function() {
+       console.log($rootScope.loggedIn);
+   }
 }])
 
 .controller ('SingleLocationController', ['$scope', 'LocationFactory', '$routeParams', 'UserFactory', function($scope, LocationFactory, $routeParams, UserFactory){
@@ -83,15 +87,8 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
 }])
 
 .controller("NavController", ["$scope", "$rootScope", "$location", "MenuService", "UserService", "UserFactory", function($scope, $rootScope, $location, MenuService, UserService, UserFactory){
-    $scope.nametest = function() {
-        if(req.user) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
-    $scope.userid = UserService.me()
+    $scope.userid = UserService.me();
     
     MenuService.setMenu([{href:"#", label:"My Profile",
                 dropdown:[{href:"/users/me/update", label:"View Profile"}, {href:"/login", label:"Login"}],
@@ -105,7 +102,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
         }
         var c = confirm('Sure you want to log out?');
         if (c) {
-            UserService.loggedIn = false;
+            $rootScope.loggedIn = false;
             UserService.logout();
             $location.path('/');
         } else {

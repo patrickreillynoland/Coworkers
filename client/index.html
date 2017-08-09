@@ -37,7 +37,7 @@
                             <a href="/search" class="work-sans offwhite-text" style="text-decoration: none;">Users</a>
                             <a href="/locations" class="work-sans offwhite-text" style="text-decoration: none;">Locations</a>
                             <span ng-repeat-start="menu_element in globalMenu"></span>
-                            <li ng-if="menu_element.dropdown !== undefined">
+                            <li ng-if="loggedIn">
                                 <a ng-href="{{menu_element.href}}" class="dropdown-toggle work-sans" style="text-decoration: none;">
                                     {{menu_element.label}}
                                     <b class="caret"></b>
@@ -50,6 +50,9 @@
                                         <a ng-click="logout()">Logout</a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li ng-if="!loggedIn">
+                                <a ng-href="/login" class="work-sans">Login</a>
                             </li>
                             <li ng-if="menu_element.dropdown === undefined">
                                 <a ng-href="{{menu_element.href}}">
