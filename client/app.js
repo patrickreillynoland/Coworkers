@@ -1,4 +1,4 @@
-angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers.controllers', 'Coworkers.factories', 'Coworkers.directives'])
+angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate', 'Coworkers.controllers', 'Coworkers.factories', 'Coworkers.directives'])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
