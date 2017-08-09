@@ -61,6 +61,7 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'ngAnimate
             $location.replace().path('/');
         } else if (nextRoute.$$route.originalPath === '/login' && UserService.isLoggedIn()) {
             event.preventDefault();
+            $rootScope.loggedIn = true;
             $location.path('/');
         }
     });

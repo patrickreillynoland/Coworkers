@@ -91,7 +91,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
     $scope.userid = UserService.me();
     
     MenuService.setMenu([{href:"#", label:"My Profile",
-                dropdown:[{href:"/users/me/update", label:"View Profile"}, {href:"/login", label:"Login"}],
+                dropdown:[{href:"/users/me/update", label:"View Profile"}],
     }]);
     
     $scope.logout = function() {
