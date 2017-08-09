@@ -6,6 +6,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
             $scope.successAlert = true;
             UserService.loggedIn = true;
             $location.replace().path('/locations');
+            console.log(UserService.loggedIn);
         }, function(err) {
             $scope.failureAlert = true;
             console.log(err);
@@ -86,7 +87,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
 
 .controller("NavController", ["$scope", "$rootScope", "MenuService", "UserService", "UserFactory", function($scope, $rootScope, MenuService, UserService, UserFactory){
     $scope.nametest = function() {
-        return UserService.currentUser;
+        return UserService.loggedIn;
     }
 
     $scope.userid = UserService.me()
