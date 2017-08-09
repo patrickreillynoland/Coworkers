@@ -1,41 +1,63 @@
 angular.module('Coworkers.services', [])
-    .service('UserService', ['$http', '$location', function ($http, $location) {
-        var currentUser;
-        this.isLoggedIn = function() {
-            if (currentUser) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+.service('UserService', ['$http', '$location', function($http, $location) {
+    var loggedIn = false;
+    
+    var currentUser;
 
-        this.requireLogin = function() {
-            if (!this.isLoggedIn()) {
-                var current = $location.path();
-                $location.replace().path('/login').search('dest', current);
-            }
+    this.isLoggedIn = function() {
+        if (currentUser) {
+            return true;
+        } else {
+            return false;
         }
+    }
 
-        this.login = function(email, password) {
+    this.isAdmin = function() {
+        if (currentUser && currentUser.role === 'admin') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    this.loginRedirect = function() {
+        var current = $location.path();
+        $location.path('/login').search('dest', current);
+    }
+
+    this.login = function(email, password) {
+        return $http({
+            method: 'POST',
+            url: '/api/users/login',
+            data: { email: email, password: password }
+        }).then(function(response) {
+            currentUser = response.data;
+            return currentUser;
+        });
+    }
+
+    this.logout = function() {
+        return $http({
+            method: 'GET',
+            url: '/api/users/logout'
+        }).then(function() {
+            currentUser = undefined;
+        });
+    }
+
+    this.me = function() {
+        if (currentUser) {
+            return Promise.resolve(currentUser);
+        } else {
             return $http({
-                method: 'POST',
-                url: '/api/users/login',
-                data: { email: email, password: password }
+                method: 'GET',
+                url: '/api/users/me'
             }).then(function(response) {
                 currentUser = response.data;
                 return currentUser;
-            })
-        }
-
-        this.logout = function() {
-            return $http({
-                method: 'GET',
-                url: '/api/users/logout'
-            }).then(function() {
-                currentUser = undefined;
-                alert('Logged out');
             });
         }
+<<<<<<< HEAD
 
         this.autoLogout = function() {
             function AutoLogout() {
@@ -107,6 +129,17 @@ angular.module('Coworkers.services', [])
                     currentUser = response.data;
                     return currentUser;
                 });
+=======
+    }
+}])
+.service("MenuService", ["$rootScope", function($rootScope) {
+        return { 
+            menu: function() {
+                $rootScope.globalMenu;
+            },    
+            setMenu: function(menu) {
+                $rootScope.globalMenu = menu;
+>>>>>>> dev
             }
-        }
-}]);
+        };
+}]);   

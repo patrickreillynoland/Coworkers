@@ -1,0 +1,34 @@
+<div class="container">
+        <div id="profile-container" class="flex flex-column flex-center full-width"> 
+            <div class="flex flex-column flex-center profile-wrapper">
+                <div id="profile-pic-wrapper" class="flex">
+                    <img id="profile-pic" img ng-src="{{ user.imageurl }}"></img>
+                </div>
+                <h2 class="work-sans"><span ng-model="firstname">{{ user.firstname }}</span> <span ng-model="lastname">{{ user.lastname }}</span></h5>
+                <h3 class="archivo" ng-model="displayemail">{{ user.displayemail }}</h5>
+                <h4 class="archivo" ng-model="interests">{{ user.interests }}</h5>
+            </div>
+            <div id="profile-icons-container" class="full-width sandstone">
+                <div id="profile-icons">
+                    <a href="#">
+                        <i class="fa fa-facebook-official profile-icon"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-twitter profile-icon" href="#"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-linkedin-square profile-icon" href="#"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-github profile-icon" href="#"></i>
+                    </a>
+                    <a href="#" class="profile-icon">WWW</a>
+                </div>
+            </div>
+        </div>
+        
+    <div class="clearfix visible-lg" ng-if="($index + 1) % 6 == 0"></div>
+    <div class="clearfix visible-md" ng-if="($index + 1) % 4 == 0"></div>
+    <div class="clearfix visible-sm" ng-if="($index + 1) % 3 == 0"></div>
+    <!--<div class="clearfix visible-xs" ng-if="($index + 1) % 1 == 0"></div>-->
+</div>
