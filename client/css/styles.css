@@ -31,12 +31,10 @@ p {
     font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
-<<<<<<< HEAD
 a:hover {
     text-decoration: none;
 }
-=======
->>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
+
 
 /* General Styling */
 
@@ -244,9 +242,7 @@ a:hover {
     margin-top: 20px;
 }
 
-#welcome-2-users {
-
-}
+#welcome-2-users {}
 
 #welcome-2-map {
     position: relative;
@@ -291,7 +287,7 @@ a:hover {
 
 #welcome-footer {
     margin-bottom: 0;
-    height: 
+    height:
 }
 
 
@@ -305,8 +301,29 @@ a:hover {
 
 /* 5) Signup View */
 
-#signup-wrapper {
+ .form-horizontal {
+    opacity: 1;
+    padding:0px;
+} 
+
+.signup-background {
+    background-image: url("/images/pexels-photo-317377.jpeg");
+    opacity: .9;
+    background-size: 100%;
+    height: 575px;
+}
+
+
+/* #signup-wrapper {
     padding: 1em;
+} */
+
+button.btn.btn-success.work-sans {
+    position: absolute;
+    top: 170px;
+    left: 490px;
+    float: right;
+    /* margin-right: 500px; */
 }
 
 input#first-name, input#last-name {
@@ -315,6 +332,7 @@ input#first-name, input#last-name {
 
 input#inputEmail3 {
     width: 30%;
+    
 }
 
 input#inputPassword3, input#inputPassword4 {
@@ -338,7 +356,7 @@ input#inputPassword3, input#inputPassword4 {
     padding: 8px;
     min-height: 150px;
     margin: 10px;
-    width: 100%;
+    width: 300px;
 }
 
 .profile-pic {
@@ -405,11 +423,11 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     width: 9em;
 }
 
-<<<<<<< HEAD
 #profile-icons-container {
     width: 50em;
     border: 2px solid grey;
 }
+
 #profile-icons {
     text-align: center;
     margin: 15px;
@@ -417,6 +435,7 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     display: block;
     font-size: 2em;
 }
+
 .profile-icon {
     margin-right: 15px;
 }
@@ -429,13 +448,6 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     border: 2px solid grey;
     width: 50em;
     height: 24em;
-
-=======
-.profile-wrapper {
-    border: 2px solid grey;
-    width: 50em;
-    height: 30em;
->>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
 }
 
 input#profile-btn {
@@ -624,16 +636,13 @@ input#profile-btn {
     float: right;
     padding-left: 0;
 }
-<<<<<<< HEAD
- 
+
 #map_wrapper_multiple {
     height: 550px;
     width: 850px;
     margin-top: 20px;
-    margin-left: 60px;   
-}   
-=======
->>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
+    margin-left: 60px;
+}
 
 #product-list {
     margin-top: 60px;
