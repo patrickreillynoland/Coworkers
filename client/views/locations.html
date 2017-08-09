@@ -1,11 +1,11 @@
 <div class="row" id="item-display">
-    <div class="container col-md-2" id="product-list">
+    <div class="container col-md-6 col-xs-12" id="product-list">
         <div id="product-div" ng-repeat="location in locations | filter:'!away'" >
             <div id="location-wrapper">
                 <div id="the-product">
-                    <h3 id="prod-title" class="cov-font"> {{ location.name }}</h3>
-                    <h4 id="prod-price" class="cov-font">{{ location.address }}</h4>
-                    <p><a ng-href="/locations/{{ location.locationid }}">See Coworkers</a></p>
+                    <h3 id="prod-title" class="work-sans"> {{ location.name }}</h3>
+                    <h4 id="prod-price" class="work-sans">{{ location.address }}</h4>
+                    <p><a ng-href="/locations/{{ location.locationid }}" class="work-sans">See Coworkers</a></p>
                 </div>
             <div class="clearfix visible-lg" ng-if="($index + 1) % 6 == 0"></div>
             <div class="clearfix visible-md" ng-if="($index + 1) % 4 == 0"></div>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div id="map_wrapper_multiple" class="col-md-8">
+    <div id="map_wrapper_multiple" class="col-md-6 col-xs-12">
         <div id="map_canvas" class="mapping"></div>
             <script>    
             jQuery(function($) {
@@ -62,13 +62,16 @@
         var infoWindow = new google.maps.InfoWindow(), marker, i;
         
         // Loop through our array of markers & place each one on the map  
-        for( i = 0; i < markers.length; i++ ) {
+        for(i = 0; i < markers.length; i++ ) {
             var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+            var letter = String.fromCharCode("A".charCodeAt(0) + i);
             bounds.extend(position);
             marker = new google.maps.Marker({
                 position: position,
                 map: map,
-                title: markers[i][0]
+                title: markers[i][0],
+                icon: "http://maps.google.com/mapfiles/marker" + letter + ".png",
+                animation: google.maps.Animation.DROP
             });
             
             // Allow each marker to have an info window    
