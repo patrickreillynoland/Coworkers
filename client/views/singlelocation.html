@@ -2,11 +2,11 @@
     <div class="col-sm-6">
         <!-- shows all users that are currently available and unavailable ie. not offline -->
         <div id="">
-            <div ng-class="{'location-user-hide' : toggle}" class="col-sm-4 col-md-8" ng-repeat="user in users | filter:{locationname: location.name} | filter: searchText">
+            <div ng-class="{'location-user-hide' : toggle}" class="col-sm-6 col-md-12" ng-repeat="user in users | filter:{locationname: location.name} | filter: searchText">
                 <div>
                     <a ng-href="/users/{{ user.userid }}" style="text-decoration: none;">
                         <div class="flex flex-column user-card">
-                            <img class="profile-pic" lazy-src="{{ user.imageurl }}" />
+                            <img class="profile-pic" src="{{ user.imageurl }}" />
                             <div class="" id="single-profile-info-container">
                                 <h3 class="work-sans single-location-user-info">{{ user.firstname }} {{ user.lastname }}</h5>
                                 <h5 class="arvo single-location-user-info">{{ user.displayemail }}</h5>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div id="single-location-map" class="col-md-5 col-sm-12 col-xs-12">
-        <h2 class="work-sans">You Are Here</h2>
+        <h2 id="single-location-youarehere" class="work-sans">You Are Here</h2>
         <div id="single-location-information">
             <h3 class="single-location-info work-sans">{{ location.name }}</h3>
             <h3 class="single-location-info archivo">{{ location.address }}</h3>
@@ -40,7 +40,8 @@
                     var map;
                     var bounds = new google.maps.LatLngBounds();
                     var mapOptions = {
-                        mapTypeId: 'roadmap'
+                        mapTypeId: 'roadmap',
+                        mapTypeControl: false
                     };
 
                 // Display a map on the page
@@ -87,8 +88,6 @@
                         infoWindow.open(map, marker);
                     }
                 })(marker, i));
-                infoWindow.setContent(infoWindowContent[i][0]);
-                infoWindow.open(map, marker);
 
                 // Automatically center the map fitting all markers on the screen
                 map.fitBounds(bounds);
