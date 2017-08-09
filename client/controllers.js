@@ -14,8 +14,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
 
     $scope.logout = function() {
         UserService.logout();
-        UserService.loggedIn = false;
-        redirect();
+        $location.replace().path('/');
     }
 
     UserService.me().then(function() {
@@ -36,7 +35,6 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
 
 .controller('UsersController', ['$scope', '$location', '$routeParams', 'UserFactory', 'UserService', function($scope, $location, $routeParams, UserFactory, UserService) {
     $scope.users=UserFactory.query();
-    
 }])
 
 .controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
@@ -84,9 +82,13 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
     $scope.toggle = true;
 }])
 
-.controller("NavController", ["$scope", "$rootScope", "MenuService", "UserService", "UserFactory", function($scope, $rootScope, MenuService, UserService, UserFactory){
+.controller("NavController", ["$scope", "$rootScope", "$location", "MenuService", "UserService", "UserFactory", function($scope, $rootScope, $location, MenuService, UserService, UserFactory){
     $scope.nametest = function() {
-        return UserService.currentUser;
+        if(req.user) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     $scope.userid = UserService.me()
@@ -105,6 +107,7 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
         if (c) {
             UserService.loggedIn = false;
             UserService.logout();
+            $location.path('/');
         } else {
             return;
         }

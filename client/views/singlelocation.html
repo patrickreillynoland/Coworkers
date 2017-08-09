@@ -40,7 +40,8 @@
                     var map;
                     var bounds = new google.maps.LatLngBounds();
                     var mapOptions = {
-                        mapTypeId: 'roadmap'
+                        mapTypeId: 'roadmap',
+                        mapTypeControl: false
                     };
 
                 // Display a map on the page
@@ -87,8 +88,6 @@
                         infoWindow.open(map, marker);
                     }
                 })(marker, i));
-                infoWindow.setContent(infoWindowContent[i][0]);
-                infoWindow.open(map, marker);
 
                 // Automatically center the map fitting all markers on the screen
                 map.fitBounds(bounds);
