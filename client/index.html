@@ -38,7 +38,7 @@
                             <a href="/locations" class="work-sans offwhite-text" style="text-decoration: none;">Locations</a>
                             <span ng-repeat-start="menu_element in globalMenu"></span>
                             <li ng-if="menu_element.dropdown !== undefined">
-                                <a ng-href="{{menu_element.href}}" class="dropdown-toggle work-sans">
+                                <a ng-href="{{menu_element.href}}" class="dropdown-toggle work-sans" style="text-decoration: none;">
                                     {{menu_element.label}}
                                     <b class="caret"></b>
                                 </a>
@@ -70,6 +70,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
         <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
         <script src="app.js"></script>
         <script src="controllers.js"></script>

@@ -1,4 +1,4 @@
-angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'Coworkers.factories', 'Coworkers.services', 'Coworkers.directives'])
+angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimate', 'Coworkers.factories', 'Coworkers.services', 'Coworkers.directives'])
 .controller('LoginController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
     $scope.login = function() {
         UserService.login($scope.email, $scope.password)
