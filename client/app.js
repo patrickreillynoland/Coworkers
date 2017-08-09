@@ -1,4 +1,4 @@
-angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers.controllers', 'Coworkers.factories'])
+angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers.controllers', 'Coworkers.factories', 'Coworkers.directives'])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
@@ -22,11 +22,6 @@ angular.module('Coworkers', ['ngRoute', 'ngResource', 'ui.bootstrap', 'Coworkers
     .when('/users/:id', {
         templateUrl:'views/profile.html',
         controller: 'ProfileController',
-        requiresLogin: true
-    })
-    .when('/users', {
-        templateUrl: 'views/users.html',
-        controller: 'UsersController',
         requiresLogin: true
     })
     .when('/search', {

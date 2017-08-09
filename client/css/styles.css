@@ -31,12 +31,10 @@ p {
     font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
-<<<<<<< HEAD
 a:hover {
     text-decoration: none;
+    cursor: pointer;
 }
-=======
->>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
 
 /* General Styling */
 
@@ -223,7 +221,7 @@ a:hover {
 }
 
 #welcome-3 {
-    height: 10em;
+    height: 300px;
 }
 
 #welcome-header {
@@ -291,7 +289,6 @@ a:hover {
 
 #welcome-footer {
     margin-bottom: 0;
-    height: 
 }
 
 
@@ -405,7 +402,6 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     width: 9em;
 }
 
-<<<<<<< HEAD
 #profile-icons-container {
     width: 50em;
     border: 2px solid grey;
@@ -430,12 +426,6 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     width: 50em;
     height: 24em;
 
-=======
-.profile-wrapper {
-    border: 2px solid grey;
-    width: 50em;
-    height: 30em;
->>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
 }
 
 input#profile-btn {
@@ -550,6 +540,7 @@ input#profile-btn {
 
 .location-user-hide:first-of-type {
     display: none;
+    transition: all linear 0.5s;
 }
 
 .location-button-hide {
@@ -624,7 +615,6 @@ input#profile-btn {
     float: right;
     padding-left: 0;
 }
-<<<<<<< HEAD
  
 #map_wrapper_multiple {
     height: 550px;
@@ -632,8 +622,6 @@ input#profile-btn {
     margin-top: 20px;
     margin-left: 60px;   
 }   
-=======
->>>>>>> 0cc43a13a541f5246832eb9259fdfdfeb73f5215
 
 #product-list {
     margin-top: 60px;

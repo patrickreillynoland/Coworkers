@@ -76,7 +76,7 @@ router.route('/')
    
 // actually /api/users/:id
 router.route('/:id')
-    .get( function(req, res) {
+    .get(function(req, res) {
         procedures.read(req.params.id)
         .then(function(user) {
             res.send(user);
