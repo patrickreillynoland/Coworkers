@@ -35,10 +35,6 @@ a:hover {
     text-decoration: none;
     cursor: pointer;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 00ce1e0d36919a0f63dc82077c6e6eb6f8039bc5
 
 /* General Styling */
 
@@ -247,13 +243,9 @@ a:hover {
     margin-top: 20px;
 }
 
-<<<<<<< HEAD
-#welcome-2-users {}
-=======
 /* #welcome-2-users {
 
 } */
->>>>>>> 00ce1e0d36919a0f63dc82077c6e6eb6f8039bc5
 
 #welcome-2-map {
     position: relative;
@@ -298,10 +290,6 @@ a:hover {
 
 #welcome-footer {
     margin-bottom: 0;
-<<<<<<< HEAD
-    height:
-=======
->>>>>>> 00ce1e0d36919a0f63dc82077c6e6eb6f8039bc5
 }
 
 
@@ -327,15 +315,18 @@ a:hover {
     height: 575px;
 }
 
+#character-count{
+    margin-left: 180px;
+}
 
-/* #signup-wrapper {
+ #signup-wrapper {
     padding: 1em;
-} */
+} 
 
 button.btn.btn-success.work-sans {
     position: absolute;
     top: 170px;
-    left: 490px;
+    left: 667px;
     float: right;
     /* margin-right: 500px; */
 }
@@ -370,7 +361,7 @@ input#inputPassword3, input#inputPassword4 {
     padding: 8px;
     min-height: 150px;
     margin: 10px;
-    width: 300px;
+    width: 500px;
 }
 
 .profile-pic {
@@ -462,10 +453,6 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     border: 2px solid grey;
     width: 50em;
     height: 24em;
-<<<<<<< HEAD
-=======
-
->>>>>>> 00ce1e0d36919a0f63dc82077c6e6eb6f8039bc5
 }
 
 input#profile-btn {
@@ -660,15 +647,6 @@ input#profile-btn {
     float: right;
     padding-left: 0;
 }
-<<<<<<< HEAD
-
-#map_wrapper_multiple {
-    height: 550px;
-    width: 850px;
-    margin-top: 20px;
-    margin-left: 60px;
-}
-=======
  
 /* #map_wrapper_multiple {
     height: 550px;
@@ -676,7 +654,6 @@ input#profile-btn {
     margin-top: 20px;
     margin-left: 60px;   
 }    */
->>>>>>> 00ce1e0d36919a0f63dc82077c6e6eb6f8039bc5
 
 #product-list {
     margin-top: 60px;
