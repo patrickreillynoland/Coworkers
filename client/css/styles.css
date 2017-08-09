@@ -148,7 +148,6 @@ a:hover {
 
 .work-sans {
     font-family: 'Work Sans', sans-serif;
-    margin-left: 18px;
 }
 
 
@@ -228,6 +227,10 @@ a:hover {
     height: 300px;
 }
 
+#welcome-3-container {
+    padding-right: 0;
+}
+
 #welcome-header {
     font-size: 6em;
 }
@@ -301,6 +304,7 @@ a:hover {
 #login-wrapper {
     margin-left: 20%;
     padding: 0 15% 0 15%;
+    margin-top: 20px;
 }
 
 
@@ -312,16 +316,15 @@ a:hover {
 } 
 
 .signup-background {
-    background-image: url("/images/pexels-photo-317377.jpeg");
-    opacity: .9;
     background-size: 100%;
-    height: 575px;
+    height: 650px;
+    background-image: url("/images/pexels-photo-317377.jpeg");
+    opacity: .9s;
 }
 
-
-/* #signup-wrapper {
-    padding: 1em;
-} */
+ #signup-wrapper {
+    margin-top: 20px;;
+} 
 
 button.btn.btn-success.work-sans {
     position: absolute;
@@ -332,7 +335,7 @@ button.btn.btn-success.work-sans {
 }
 
 input#first-name, input#last-name {
-    width: 20%;
+    width: 30%;
 }
 
 input#inputEmail3 {
@@ -364,7 +367,7 @@ input#inputPassword3, input#inputPassword4 {
     padding: 8px;
     min-height: 150px;
     margin: 10px;
-    width: 300px;
+    min-width: 300px;
 }
 
 .profile-pic {
@@ -404,7 +407,7 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
 }
 
 #users-list {
-    width: 80%;
+    width: 60%;
     margin-left: 7em;
 }
 
@@ -460,6 +463,14 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
     padding-bottom: 20px;
 }
 
+.profile-wrapper h2 {
+    font-size: 56px;
+}
+
+.profile-wrapper h3 {
+    font-size: 34px;
+}
+
 input#profile-btn {
     float: right;
     margin-top: 2px;
@@ -474,7 +485,7 @@ input#profile-btn {
     margin-top: 60px;
     margin-left: 50px;
     margin-right: 20px;
-    float:right;
+    float: left;
    
    
 }
@@ -604,6 +615,7 @@ input#profile-btn {
 #single-location-youarehere {
     text-align: center; 
     text-decoration: underline;
+    margin-top: 0;
 }
 
 #single-profile-info-container {
@@ -660,10 +672,6 @@ input#profile-btn {
     margin-left: 60px;   
 }    */
 
-#product-list {
-    margin-top: 60px;
-    margin-left: 100px;
-}
 
 
 
@@ -726,10 +734,10 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 .social-circle li a:hover i, .triggeredHover {
-	-moz-transform: rotate(360deg);
+	/* -moz-transform: rotate(360deg);
 	-webkit-transform: rotate(360deg);
 	-ms--transform: rotate(360deg);
-	transform: rotate(360deg);
+	transform: rotate(360deg); */
 	-webkit-transition: all 0.2s;
 	-moz-transition: all 0.2s;
 	-o-transition: all 0.2s;
@@ -745,6 +753,16 @@ a.socialIcon:hover, .socialHoverClass {
 	transition: all 0.8s;
 }
 
+#footer-icons {
+    margin-right: 20px;
+    float: right;
+}
+
+#footer-copyright {
+    width: 30%;
+    display: inline-block;
+    margin: 15px 0 0 5px;
+}
 /* a {
  background-color: #D3D3D3;   
 } */
