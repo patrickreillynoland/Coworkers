@@ -18,6 +18,8 @@
 
 
 /* 1) Elements and General Classes */
+
+
 /* Elements */
 
 body {
@@ -38,6 +40,7 @@ a:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 /* General Styling */
 
@@ -249,6 +252,7 @@ a:hover {
     margin-top: 20px;
 }
 
+
 /* #welcome-2-users {
 
 } */
@@ -310,10 +314,10 @@ a:hover {
 
 /* 5) Signup View */
 
- .form-horizontal {
+.form-horizontal {
     opacity: 1;
-    padding:0px;
-} 
+    padding: 0px;
+}
 
 .signup-background {
     background-size: 100%;
@@ -322,16 +326,17 @@ a:hover {
     opacity: .9s;
 }
 
- #signup-wrapper {
-    margin-top: 20px;;
-} 
+#signup-wrapper {
+    margin-top: 20px;
+    ;
+}
 
 button.btn.btn-success.work-sans {
     position: relative;
-     /* margin-right: 500px;  */
+    /* margin-right: 500px;  */
 }
 
-#character-count{
+#character-count {
     max-width: 500px;
 }
 
@@ -341,7 +346,6 @@ input#first-name, input#last-name {
 
 input#inputEmail3 {
     width: 50%;
-    
 }
 
 input#inputPassword3, input#inputPassword4 {
@@ -358,6 +362,21 @@ input#inputPassword3, input#inputPassword4 {
 #update-content {
     margin-top: 7em;
 }
+
+.edit-profile-wrapper {
+    border: 2px solid grey;
+    width: 50em;
+    height: 50em;
+    padding-bottom: 20px;
+}
+
+.form-control-socialmedia {
+    width: 90%; 
+    display: inline-block;
+     margin-left: 25px; 
+    margin-right: 15px;
+}
+
 
 /* 7) Users View */
 
@@ -487,8 +506,6 @@ input#profile-btn {
     margin-left: 50px;
     margin-right: 20px;
     float: left;
-   
-   
 }
 
 #the-product {
@@ -497,7 +514,6 @@ input#profile-btn {
     margin-bottom: 10px;
     width: 30em;
     margin-right: 50px;
-    
 }
 
 #the-product:hover {
@@ -508,6 +524,7 @@ input#profile-btn {
     margin-top: 60px;
     margin-left: 30px;
 }
+
 
 /* 10) Single Location View */
 
@@ -614,7 +631,7 @@ input#profile-btn {
 }
 
 #single-location-youarehere {
-    text-align: center; 
+    text-align: center;
     text-decoration: underline;
     margin-top: 0;
 }
@@ -642,7 +659,9 @@ input#profile-btn {
     margin-left: 60px;
 }
 
+
 /* 11) Footer Styling */
+
 #footer {
     padding-top: 10px;
 }
@@ -666,6 +685,8 @@ input#profile-btn {
     float: right;
     padding-left: 0;
 }
+
+
 /* #map_wrapper_multiple {
     height: 550px;
     width: 850px;
@@ -673,85 +694,91 @@ input#profile-btn {
     margin-left: 60px;   
 }    */
 
-
-
-
-
 ul.social-network {
-	list-style: none;
-	display: inline;
-	margin-left:0 !important;
-	padding: 0;
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
 }
+
 ul.social-network li {
-	display: inline;
-	margin: 0 5px;
+    display: inline;
+    margin: 0 5px;
 }
 
 
 /* footer social icons */
+
 .social-network a.icoRss:hover {
-	background-color: #F56505;
-}
-.social-network a.icoFacebook:hover {
-	background-color:#3B5998;
-}
-.social-network a.icoTwitter:hover {
-	background-color:#33ccff;
-}
-.social-network a.icoGoogle:hover {
-	background-color:#BD3518;
-}
-.social-network a.icoVimeo:hover {
-	background-color:#0590B8;
-}
-.social-network a.icoLinkedin:hover {
-	background-color:#007bb7;
-}
-.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
-.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
-	color:#fff;
-}
-a.socialIcon:hover, .socialHoverClass {
-	color:#44BCDD;
+    background-color: #F56505;
 }
 
-.social-circle li  {
-	display:inline-block;
-	 position:relative; 
-	margin:0 auto 0 auto;
-	-moz-border-radius:50%;
-	-webkit-border-radius:50%;
-	border-radius:50%;
-	text-align:center;
-	width: 50px;
-	height: 50px;
-	font-size:20px;
+.social-network a.icoFacebook:hover {
+    background-color: #3B5998;
 }
+
+.social-network a.icoTwitter:hover {
+    background-color: #33ccff;
+}
+
+.social-network a.icoGoogle:hover {
+    background-color: #BD3518;
+}
+
+.social-network a.icoVimeo:hover {
+    background-color: #0590B8;
+}
+
+.social-network a.icoLinkedin:hover {
+    background-color: #007bb7;
+}
+
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+    color: #fff;
+}
+
+a.socialIcon:hover, .socialHoverClass {
+    color: #44BCDD;
+}
+
+.social-circle li {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
 .social-circle li i {
-	margin:0;
-	line-height:50px;
-	text-align: center;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
 }
 
 .social-circle li a:hover i, .triggeredHover {
-	/* -moz-transform: rotate(360deg);
+    /* -moz-transform: rotate(360deg);
 	-webkit-transform: rotate(360deg);
 	-ms--transform: rotate(360deg);
 	transform: rotate(360deg); */
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
 }
+
 .social-circle i {
-	color: #fff;
-	-webkit-transition: all 0.8s;
-	-moz-transition: all 0.8s;
-	-o-transition: all 0.8s;
-	-ms-transition: all 0.8s;
-	transition: all 0.8s;
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
 }
 
 #footer-icons {
@@ -764,6 +791,8 @@ a.socialIcon:hover, .socialHoverClass {
     display: inline-block;
     margin: 15px 0 0 5px;
 }
+
+
 /* a {
  background-color: #D3D3D3;   
 } */
