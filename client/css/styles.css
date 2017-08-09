@@ -329,7 +329,7 @@ input#inputPassword3, input#inputPassword4 {
 }
 
 #update-content {
-    margin-top: 3em;
+    margin-top: 7em;
 }
 
 /* 7) Users View */
@@ -431,8 +431,8 @@ fdiv.flex.flex-column.flex-center.profile-wrapper {
 .profile-wrapper {
     border: 2px solid grey;
     width: 50em;
-    height: 24em;
-
+    height: 28em;
+    padding-bottom: 20px;
 }
 
 input#profile-btn {

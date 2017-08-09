@@ -5,7 +5,7 @@
                 <img id="profile-pic" img ng-src="{{ user.imageurl }}"></img>
             </div>
             <div class="" id="update-content">
-            <h3 class="work-sans"><span ng-model="firstname">{{ user.firstname }}</span> <span ng-model="lastname">{{ user.lastname }}</span></h3>
+                <h3 class="work-sans text-centered"><span ng-model="firstname">{{ user.firstname }}</span> <span ng-model="lastname">{{ user.lastname }}</span></h3>
                 <form class="my-form" ng-submit="save()">
                     <div class="form-group">
                         <input class="form-control " type="text" ng-model="user.displayemail">
