@@ -5,7 +5,7 @@
                     <img id="profile-pic" img ng-src="{{ user.imageurl }}"></img>
                 </div>
                 <h2 class="work-sans"><span ng-model="firstname">{{ user.firstname }}</span> <span ng-model="lastname">{{ user.lastname }}</span></h5>
-                <h3 class="archivo" ng-model="displayemail">{{ user.displayemail }}</h5>
+                <h3 class="archivo"><a ng-model="displayemail" ng-href="mailto:{{ user.displayemail }}" style="text-decoration: none;">{{ user.displayemail }}</a></h3>
                 <h4 class="archivo" ng-model="interests">{{ user.interests }}</h5>
             </div>
             <div id="profile-icons-container" class="full-width sandstone">

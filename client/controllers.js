@@ -38,17 +38,18 @@ angular.module('Coworkers.controllers', ['ngResource', 'ui.bootstrap', 'ngAnimat
     $scope.users=UserFactory.query();
 }])
 
-.controller('SignupController', ['$scope', 'UserFactory', '$location', function($scope, UserFactory, $location){
+.controller('SignupController', ['$scope', 'UserFactory', '$location', '$rootScope', function($scope, UserFactory, $location, $rootScope){
     $scope.newUser = function(){
        if ($scope.user.password === $scope.password1) {
-     var u = new UserFactory($scope.user);
+        var u = new UserFactory($scope.user);
         u.$save(function(){
+            $rootScope.loggedIn = true;
             $location.path('/locations');
         }, function(err){
             console.log(err);
         })
 } else { 
-   alert("passwords mismatch")
+   alert("Please check your passwords and try again.")
 }
     }
 }])

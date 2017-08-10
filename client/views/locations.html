@@ -3,7 +3,7 @@
         <div id="product-div" ng-repeat="location in locations | filter:'!away'" >
             <div id="location-wrapper">
                 <div id="the-product">
-                    <h3 id="prod-title" class="work-sans"> {{ location.name }}</h3>
+                    <h3 id="prod-title" class="work-sans">{{ location.name }}</h3>
                     <h4 id="prod-price" class="work-sans">{{ location.address }}</h4>
                     <p><a ng-href="/locations/{{ location.locationid }}" class="work-sans">See Coworkers</a></p>
                 </div>
