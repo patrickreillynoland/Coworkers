@@ -18,6 +18,7 @@ router.post('/login', function(req, res, next) {
         }
         req.logIn(user, function(err) {
             if (err) {
+                console.log(err);
                 return res.sendStatus(500);
             } else {
                 return res.send(user);
@@ -25,6 +26,28 @@ router.post('/login', function(req, res, next) {
         });
     })(req, res, next);
 });
+
+router.post('/', function(req, res) {
+        var u = req.body;
+        utils.encryptPassword(u.password)
+        .then(function(hash) {
+            u.password = hash;
+            return procedures.create(u.firstname, u.lastname, u.email, hash, u.interests);
+        }).then(function(result) {
+            u.userid = result.userid;
+            req.logIn(u, function(err) {
+                if (err) {
+                    console.log(err);
+                    return res.sendStatus(500);
+                } else {
+                    return res.status(201).send(result);
+                }
+            });
+        }).catch(function(err) {
+            console.log(err);
+            res.sendStatus(500);
+        });
+    })
 
 router.all('*', auth.isLoggedIn);
 
@@ -41,7 +64,7 @@ router.get('/me', function(req, res) {
 
 // actually /api/users/
 router.route('/')
-    .get(auth.isAdmin, function(req, res) {
+    .get(function(req, res) {
         procedures.all()
         .then(function(users) {
             res.send(users);
@@ -50,21 +73,19 @@ router.route('/')
             res.sendStatus(500);
         });
     })
-    .post(auth.isAdmin, function(req, res) {
-        var u = req.body;
-        utils.encryptPassword(u.password)
-        .then(function(hash) {
-            return procedures.create(u.email, hash, u.firstname, u.lastname);
-        }).then(function(id) {
-            res.status(201).send(id);
-        }).catch(function(err) {
+   
+// actually /api/users/:id
+router.route('/:id')
+    .get(function(req, res) {
+        procedures.read(req.params.id)
+        .then(function(user) {
+            res.send(user);
+        }, function(err) {
             console.log(err);
             res.sendStatus(500);
         });
     })
-// actually /api/users/:id
-router.route('/:id')
-    .get(auth.isAdmin, function(req, res) {
+    .delete(auth.isAdmin,function(req, res) {
         procedures.read(req.params.id)
         .then(function(user) {
             res.send(user);
@@ -72,11 +93,9 @@ router.route('/:id')
             console.log(err);
             res.sendStatus(500);
         });
-    });
-
-router.route('/:id')
-    .delete(auth.isAdmin, function(req, res) {
-        procedures.read(req.params.id)
+    })
+    .put(auth.isUser, function(req, res) {
+        procedures.update(req.params.id, req.body.interests, req.body.displayemail)
         .then(function(user) {
             res.send(user);
         }, function(err) {
@@ -84,39 +103,5 @@ router.route('/:id')
             res.sendStatus(500);
         });
     });
-
-    router.route('/:id')
-    .post(auth.isAdmin, function(req, res) {
-        procedures.read(req.params.id)
-        .then(function(user) {
-            res.send(user);
-        }, function(err) {
-            console.log(err);
-            res.sendStatus(500);
-        });
-    });
-
-    router.route('/:id')
-    .post(auth.isAdmin, function(req, res) {
-        procedures.UpdateInterest(req.params.id)
-        .then(function(user) {
-            res.send(user);
-        }, function(err) {
-            console.log(err);
-            res.sendStatus(500);
-        });
-    });
-    router.route('/:id')
-    .get(auth.isAdmin, function(req, res) {
-        procedures.readByEmail(req.params.id)
-        .then(function(user) {
-            res.send(user);
-        }, function(err) {
-            console.log(err);
-            res.sendStatus(500);
-        });
-    });
-
-
 
 module.exports = router;

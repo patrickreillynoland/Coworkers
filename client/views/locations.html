@@ -1,0 +1,101 @@
+<div class="row" id="item-display">
+    <div class="container col-md-5 col-xs-12" id="product-list">
+        <div id="product-div" ng-repeat="location in locations | filter:'!away'" >
+            <div id="location-wrapper">
+                <div id="the-product">
+                    <h3 id="prod-title" class="work-sans">{{ location.name }}</h3>
+                    <h4 id="prod-price" class="work-sans">{{ location.address }}</h4>
+                    <p><a ng-href="/locations/{{ location.locationid }}" class="work-sans">See Coworkers</a></p>
+                </div>
+            <div class="clearfix visible-lg" ng-if="($index + 1) % 6 == 0"></div>
+            <div class="clearfix visible-md" ng-if="($index + 1) % 4 == 0"></div>
+            <div class="clearfix visible-sm" ng-if="($index + 1) % 3 == 0"></div>
+            <div class="clearfix visible-xs" ng-if="($index + 1) % 1 == 0"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="map_wrapper_multiple" class="col-md-6 col-xs-12">
+        <div id="map_canvas" class="mapping"></div>
+            <script>    
+            jQuery(function($) {
+                // Asynchronously Load the map API 
+                var script = document.createElement('script');
+                script.src = "//maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+                document.body.appendChild(script);
+            });
+
+            function initialize() {
+                var map;
+                var bounds = new google.maps.LatLngBounds();
+                var mapOptions = {
+                    mapTypeId: 'roadmap',
+                    mapTypeControl: false
+                };
+                        
+            // Display a map on the page
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            map.setTilt(45);
+                
+            // Multiple Markers
+            var markers = [
+                ['Workaholics, Chattanooga', 35.046151,-85.307571],
+                ['Society of Work, Chattanooga', 35.042901,-85.308673],
+                ['Workhorse, Chattanooga', 35.033978,-85.30242]
+            ];
+                            
+        // Info Window Content
+        var infoWindowContent = [
+            ['<div class="info_content">' +
+            '<h3>Workaholics</h3>' +
+            '<p>We are the coworking space for the night owlers. <a href="http://worklatenights.com/" target="_blank"> worklatenights.com/</a>.</p>' +        '</div>'],
+            ['<div class="info_content">' +
+            '<h3>Society of Work</h3>' +
+            '<p>Everyone here is into building things—startups, communities, freelance networks, individual relationships. Anything with a pulse.Please visit us at: <a href="http://societyofwork.com" target="_blank">societyofwork.com</a> .</p>' +
+            '</div>'],
+            ['<div class="info_content">' +
+            '<h3>Workhorse</h3>' +
+            '<p> All you need to haul your workload and nothing else. More info at: <a href="https://gettowork.horse" target="_blank">gettowork.horse</a> .</p>' +
+            '</div>']
+        ];
+            
+        // Display multiple markers on a map
+        var infoWindow = new google.maps.InfoWindow(), marker, i;
+        
+        // Loop through our array of markers & place each one on the map  
+        for(i = 0; i < markers.length; i++ ) {
+            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+            var letter = String.fromCharCode("A".charCodeAt(0) + i);
+            bounds.extend(position);
+            marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: markers[i][0],
+                icon: "http://maps.google.com/mapfiles/marker" + letter + ".png",
+                animation: google.maps.Animation.DROP
+            });
+            
+            // Allow each marker to have an info window    
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infoWindow.setContent(infoWindowContent[i][0]);
+                    infoWindow.open(map, marker);
+                }
+            })(marker, i));
+
+            // Automatically center the map fitting all markers on the screen
+            map.fitBounds(bounds);
+        }
+
+        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+            this.setZoom(15);
+            google.maps.event.removeListener(boundsListener);
+        });
+        
+    }
+
+</script>
+</div>
+</body>
+</html>
